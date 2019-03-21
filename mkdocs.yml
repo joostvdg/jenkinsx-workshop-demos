@@ -1,0 +1,77 @@
+# Meta
+site_name: Jay's Jenkins X Workshop
+site_url: http://127.0.0.1.nip.io:8090/docs
+# Copyright
+copyright: 'Copyright &copy; 2019 Joost van der Griendt'
+repo_name: 'joostvdg/jenkinsx-workshop-demos'
+repo_url: 'https://github.com/joostvdg/jenkinsx-workshop-demos'
+
+docs_dir: 'docs'
+
+# Pages
+pages:
+- Home: index.md
+
+- Go Demo:
+  - Demo: godemo/index.md
+
+- BuildPack Demo:
+  - Demo: buildpack/index.md
+
+- X-Files Demo:
+  - Overview: xfiles/index.md
+  - Mulder: xfiles/mulder.md
+  - Scully: xfiles/scully.md
+  - Integration: xfiles/integration.md
+
+- Tips & Tricks:
+  - GitOps: tips/gitops.md
+  - Vault: tips/vault.md
+  - Custom Domain: tips/custom-domain.md
+  - Command Overview: tips/commands.md
+
+# Theme
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'blue'
+    accent: 'cyan'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/joostvdg'
+    - type: 'twitter'
+      link: 'https://twitter.com/joost_vdg'
+    - type: 'linkedin'
+      link: 'https://linkedin.com/in/joostvdg'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+      guess_lang: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
