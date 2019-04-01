@@ -11,6 +11,12 @@ docs_dir: 'docs'
 # Pages
 nav:
 - Home: index.md
+- Install: install.md
+
+- Kubernetes:
+  - Basics: k8s/index.md
+  - Helm: k8s/helm.md
+  - Knative Build: k8s/knative-build.md
 
 - Go Demo:
   - Demo: godemo/index.md
