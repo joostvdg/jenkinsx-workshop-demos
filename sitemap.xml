@@ -2,57 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>http://127.0.0.1.nip.io:8090/docs/</loc>
-     <lastmod>2019-03-21</lastmod>
+     <lastmod>2019-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://127.0.0.1.nip.io:8090/docs/install/</loc>
+     <lastmod>2019-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://127.0.0.1.nip.io:8090/docs/k8s/</loc>
+     <lastmod>2019-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://127.0.0.1.nip.io:8090/docs/k8s/helm/</loc>
+     <lastmod>2019-04-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>http://127.0.0.1.nip.io:8090/docs/k8s/knative-build/</loc>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://127.0.0.1.nip.io:8090/docs/godemo/</loc>
-     <lastmod>2019-03-21</lastmod>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://127.0.0.1.nip.io:8090/docs/buildpack/</loc>
-     <lastmod>2019-03-21</lastmod>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://127.0.0.1.nip.io:8090/docs/xfiles/</loc>
-     <lastmod>2019-03-21</lastmod>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://127.0.0.1.nip.io:8090/docs/xfiles/mulder/</loc>
-     <lastmod>2019-03-21</lastmod>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://127.0.0.1.nip.io:8090/docs/xfiles/scully/</loc>
-     <lastmod>2019-03-21</lastmod>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://127.0.0.1.nip.io:8090/docs/xfiles/integration/</loc>
-     <lastmod>2019-03-21</lastmod>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://127.0.0.1.nip.io:8090/docs/tips/gitops/</loc>
-     <lastmod>2019-03-21</lastmod>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://127.0.0.1.nip.io:8090/docs/tips/vault/</loc>
-     <lastmod>2019-03-21</lastmod>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://127.0.0.1.nip.io:8090/docs/tips/custom-domain/</loc>
-     <lastmod>2019-03-21</lastmod>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>http://127.0.0.1.nip.io:8090/docs/tips/commands/</loc>
-     <lastmod>2019-03-21</lastmod>
+     <lastmod>2019-04-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
