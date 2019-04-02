@@ -383,6 +383,87 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#install-jx-w-cluster" title="Install JX w/ Cluster" class="md-nav__link">
+    Install JX w/ Cluster
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" title="Variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-nexus" title="Disable Nexus" class="md-nav__link">
+    Disable Nexus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install_1" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-install" title="Test install" class="md-nav__link">
+    Test install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-serverless" title="Install Serverless" class="md-nav__link">
+    Install Serverless
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables_1" title="Variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install_2" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -791,6 +872,87 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#install-jx-w-cluster" title="Install JX w/ Cluster" class="md-nav__link">
+    Install JX w/ Cluster
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" title="Variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disable-nexus" title="Disable Nexus" class="md-nav__link">
+    Disable Nexus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install_1" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-install" title="Test install" class="md-nav__link">
+    Test install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-serverless" title="Install Serverless" class="md-nav__link">
+    Install Serverless
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables_1" title="Variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install_2" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -1038,6 +1200,10 @@ brew install weaveworks/tap/eksctl
 <p class="admonition-title">Warning</p>
 <p>It is recommended to <em>always</em> update your <code>jx</code> binary at the start of your workday. It gets updates and fixes several times a day, so don't stay behind!</p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you are running on Mac OS X, Jenkins X is using Homebrew to install the various CLI. It will install it if not present.</p>
+</div>
 <h3 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h3>
 <div class="superfences-tabs">
 <input name="__tabs_8" type="radio" id="__tab_8_0" checked="checked" />
@@ -1068,6 +1234,130 @@ brew install jx
 <input name="__tabs_8" type="radio" id="__tab_8_3" />
 <label for="__tab_8_3">Windows</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>choco install jenkins-x
+</pre></div>
+</td></tr></table></div>
+</div>
+<h2 id="install-jx-w-cluster">Install JX w/ Cluster<a class="headerlink" href="#install-jx-w-cluster" title="Permanent link">&para;</a></h2>
+<p>You can install Jenkins X in an existing Kubernetes cluster, or let it install a cluster for you. Below are the examples for installing a cluster via Jenkins X before it installs itself into it.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For all the installation options, please consult the <code>jx</code> CLI.
+<code>jx create cluster ${clusterType} --help</code>
+When in doubt, accept the default value!</p>
+</div>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<p>Set these variables in your console, for use with the install commands.</p>
+<ul>
+<li><code>CLUSTER_NAME</code> your desired cluster name (can be anything)</li>
+<li><code>PROJECT</code> is your Google Cloud <code>project-id</code><ul>
+<li>you can retrieve this via your console or via the gcloud CLI: <code>gcloud config list</code></li>
+</ul>
+</li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">REGION</span><span class="o">=</span>us-east1
+<span class="nv">ZONE</span><span class="o">=</span><span class="si">${</span><span class="nv">REGION</span><span class="si">}</span>-b
+<span class="nv">PREFIX</span><span class="o">=</span>jx
+<span class="nv">MACHINE_TYPE</span><span class="o">=</span>n1-standard-2
+<span class="nv">ADMIN_PSW</span><span class="o">=</span>admin
+<span class="nv">CLUSTER_NAME</span><span class="o">=</span>
+<span class="nv">PROJECT</span><span class="o">=</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are using Java with Maven or Gradle, you'd want to install Nexus.
+Else, you can disable it as per example below.</p>
+</div>
+<h4 id="disable-nexus">Disable Nexus<a class="headerlink" href="#disable-nexus" title="Permanent link">&para;</a></h4>
+<p>Copy below text into a file called <code>myvalues.yaml</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>nexus:
+  enabled: <span class="nb">false</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="install_1">Install<a class="headerlink" href="#install_1" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>EKS</code> option will download and use the <a href="https://eksctl.io/">eksctl</a> tool to create a new EKS cluster, then it’ll install Jenkins X on top.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>When you're creating your first cluster with GKE, you will need to login for authorization. If you have authorization taken care of, you can add <code>--no-login</code> to prevent the process.</p>
+</div>
+<div class="superfences-tabs">
+<input name="__tabs_9" type="radio" id="__tab_9_0" checked="checked" />
+<label for="__tab_9_0">GKE</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx create cluster gke -n <span class="nv">$CLUSTER_NAME</span> -p <span class="nv">$PROJECT</span> -z <span class="si">${</span><span class="nv">ZONE</span><span class="si">}</span> <span class="se">\</span>
+    -m <span class="si">${</span><span class="nv">MACHINE_TYPE</span><span class="si">}</span> --min-num-nodes <span class="m">3</span> --max-num-nodes <span class="m">5</span> <span class="se">\</span>
+    --default-admin-password<span class="o">=</span><span class="si">${</span><span class="nv">ADMIN_PSW</span><span class="si">}</span> <span class="se">\</span>
+    --default-environment-prefix <span class="si">${</span><span class="nv">PREFIX</span><span class="si">}</span> --no-tiller
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_9" type="radio" id="__tab_9_1" />
+<label for="__tab_9_1">EKS</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx create cluster eks
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_9" type="radio" id="__tab_9_2" />
+<label for="__tab_9_2">Kops</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx create cluster aws
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_9" type="radio" id="__tab_9_3" />
+<label for="__tab_9_3">Azure</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx create cluster aks
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>For more options and information, <a href="https://jenkins-x.io/getting-started/create-cluster/">read the documentation</a>.</p>
+<h3 id="test-install">Test install<a class="headerlink" href="#test-install" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n jx get pods
+</pre></div>
+</td></tr></table>
+
+<h2 id="install-serverless">Install Serverless<a class="headerlink" href="#install-serverless" title="Permanent link">&para;</a></h2>
+<h3 id="variables_1">Variables<a class="headerlink" href="#variables_1" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">CLUSTER_NAME</span><span class="o">=</span>
+<span class="nv">PROJECT</span><span class="o">=</span>
+<span class="nv">ADMIN_PSW</span><span class="o">=</span>admin
+<span class="nv">PREFIX</span><span class="o">=</span>jx
+<span class="nv">REGION</span><span class="o">=</span>us-east1
+<span class="nv">ZONE</span><span class="o">=</span><span class="si">${</span><span class="nv">REGION</span><span class="si">}</span>-a
+<span class="nv">MACHINE_TYPE</span><span class="o">=</span>n1-standard-1
+</pre></div>
+</td></tr></table>
+
+<h3 id="install_2">Install<a class="headerlink" href="#install_2" title="Permanent link">&para;</a></h3>
+<div class="superfences-tabs">
+<input name="__tabs_10" type="radio" id="__tab_10_0" checked="checked" />
+<label for="__tab_10_0">GKE</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx create cluster gke -n <span class="nv">$CLUSTER_NAME</span> -p <span class="nv">$PROJECT</span> -z <span class="si">${</span><span class="nv">ZONE</span><span class="si">}</span> <span class="se">\</span>
+    -m n1-standard-2 --min-num-nodes <span class="m">3</span> --max-num-nodes <span class="m">5</span> <span class="se">\</span>
+    --default-admin-password<span class="o">=</span><span class="si">${</span><span class="nv">ADMIN_PSW</span><span class="si">}</span> <span class="se">\</span>
+    --default-environment-prefix  <span class="se">\</span>
+    --prow --tekton --no-tiller
 </pre></div>
 </td></tr></table></div>
 </div>
