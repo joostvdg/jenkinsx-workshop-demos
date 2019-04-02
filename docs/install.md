@@ -173,6 +173,9 @@ The `jx` binary is the main vehicle for Jenkins X to manage anything related to 
 !!! Warning
     It is recommended to *always* update your `jx` binary at the start of your workday. It gets updates and fixes several times a day, so don't stay behind!
 
+!!! Info
+    If you are running on Mac OS X, Jenkins X is using Homebrew to install the various CLI. It will install it if not present.
+
 ### Install
 
 ```bash tab="Linux"
@@ -194,4 +197,105 @@ brew install jx
 
 ```bash tab="Windows"
 choco install jenkins-x
+```
+
+## Install JX w/ Cluster
+
+You can install Jenkins X in an existing Kubernetes cluster, or let it install a cluster for you. Below are the examples for installing a cluster via Jenkins X before it installs itself into it.
+
+!!! Info
+    For all the installation options, please consult the `jx` CLI.
+    `jx create cluster ${clusterType} --help`
+    When in doubt, accept the default value!
+
+### Variables
+
+Set these variables in your console, for use with the install commands.
+
+* `CLUSTER_NAME` your desired cluster name (can be anything)
+* `PROJECT` is your Google Cloud `project-id`
+    * you can retrieve this via your console or via the gcloud CLI: `gcloud config list`
+
+```bash
+REGION=us-east1
+ZONE=${REGION}-b
+PREFIX=jx
+MACHINE_TYPE=n1-standard-2
+ADMIN_PSW=admin
+CLUSTER_NAME=
+PROJECT=
+```
+
+### Configuration
+
+!!! Warning
+    If you are using Java with Maven or Gradle, you'd want to install Nexus.
+    Else, you can disable it as per example below.
+
+#### Disable Nexus
+
+Copy below text into a file called `myvalues.yaml`.
+
+```bash
+nexus:
+  enabled: false
+```
+
+### Install
+
+!!! Info
+    `EKS` option will download and use the [eksctl](https://eksctl.io/) tool to create a new EKS cluster, then it’ll install Jenkins X on top.
+
+!!! Info
+    When you're creating your first cluster with GKE, you will need to login for authorization. If you have authorization taken care of, you can add `--no-login` to prevent the process.
+
+```bash tab="GKE"
+jx create cluster gke -n $CLUSTER_NAME -p $PROJECT -z ${ZONE} \
+    -m ${MACHINE_TYPE} --min-num-nodes 3 --max-num-nodes 5 \
+    --default-admin-password=${ADMIN_PSW} \
+    --default-environment-prefix ${PREFIX} --no-tiller
+```
+
+```bash tab="EKS"
+jx create cluster eks
+```
+
+```bash tab="Kops"
+jx create cluster aws
+```
+
+```bash tab="Azure"
+jx create cluster aks
+```
+
+For more options and information, [read the documentation](https://jenkins-x.io/getting-started/create-cluster/).
+
+### Test install
+
+```bash
+kubectl -n jx get pods
+```
+
+## Install Serverless
+
+### Variables
+
+```bash
+CLUSTER_NAME=
+PROJECT=
+ADMIN_PSW=admin
+PREFIX=jx
+REGION=us-east1
+ZONE=${REGION}-a
+MACHINE_TYPE=n1-standard-1
+```
+
+### Install
+
+```bash tab="GKE"
+jx create cluster gke -n $CLUSTER_NAME -p $PROJECT -z ${ZONE} \
+    -m n1-standard-2 --min-num-nodes 3 --max-num-nodes 5 \
+    --default-admin-password=${ADMIN_PSW} \
+    --default-environment-prefix  \
+    --prow --tekton --no-tiller
 ```
