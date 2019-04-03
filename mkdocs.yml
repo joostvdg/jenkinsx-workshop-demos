@@ -1,6 +1,6 @@
 # Meta
 site_name: Jay's Jenkins X Workshop
-site_url: http://127.0.0.1.nip.io:8090/docs
+site_url: https://joostvdg.github.io/jenkinsx-workshop-demos
 # Copyright
 copyright: 'Copyright &copy; 2019 Joost van der Griendt'
 repo_name: 'joostvdg/jenkinsx-workshop-demos'
@@ -12,17 +12,30 @@ docs_dir: 'docs'
 nav:
 - Home: index.md
 - Install: install.md
+- Quickstart Demo: go-demo.md
+
+- Tips & Tricks:
+  - Tips: tips/index.md
+  - GitOps: tips/gitops.md
+  - Vault: tips/vault.md
+  - Command Overview: tips/commands.md
+
+- Other JX Topics:
+  - Custom Domain: other/custom-domain.md
+  - Cluster Validation: other/cluster-validation.md
+  - Security: other/security.md
+  - Issue Trackers: other/issue-trackers.md
+  - Alt Git Repo: other/alt-git-repo.md
 
 - Kubernetes:
   - Basics: k8s/index.md
+  - Tools: k8s/tools.md
   - Helm: k8s/helm.md
   - Knative Build: k8s/knative-build.md
 
-- Go Demo:
-  - Demo: godemo/index.md
-
 - BuildPack Demo:
-  - Demo: buildpack/index.md
+  - Import: buildpack/import.md
+  - BuildPack: buildpack/index.md
 
 - X-Files Demo:
   - Overview: xfiles/index.md
@@ -30,11 +43,6 @@ nav:
   - Scully: xfiles/scully.md
   - Integration: xfiles/integration.md
 
-- Tips & Tricks:
-  - GitOps: tips/gitops.md
-  - Vault: tips/vault.md
-  - Custom Domain: tips/custom-domain.md
-  - Command Overview: tips/commands.md
 
 # Theme
 # Configuration
