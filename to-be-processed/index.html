@@ -1,0 +1,1957 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://joostvdg.github.io/jenkinsx-workshop-demos/to-be-processed/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>Jenkins X Introduction - Jay's Jenkins X Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,700|Ubuntu+Mono">
+        <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#jenkins-x-introduction" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://joostvdg.github.io/jenkinsx-workshop-demos" title="Jay's Jenkins X Workshop" class="md-header-nav__button md-logo">
+          
+            <img src="../images/logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Jay's Jenkins X Workshop
+              </span>
+              <span class="md-header-nav__topic">
+                Jenkins X Introduction
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      joostvdg/jenkinsx-workshop-demos
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://joostvdg.github.io/jenkinsx-workshop-demos" title="Jay's Jenkins X Workshop" class="md-nav__button md-logo">
+      
+        <img src="../images/logo.svg" width="48" height="48">
+      
+    </a>
+    Jay's Jenkins X Workshop
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      joostvdg/jenkinsx-workshop-demos
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="Install" class="md-nav__link">
+      Install
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../go-demo/" title="Quickstart Demo" class="md-nav__link">
+      Quickstart Demo
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Tips & Tricks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Tips & Tricks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tips/" title="Tips" class="md-nav__link">
+      Tips
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tips/gitops/" title="GitOps" class="md-nav__link">
+      GitOps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tips/vault/" title="Vault" class="md-nav__link">
+      Vault
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tips/commands/" title="Command Overview" class="md-nav__link">
+      Command Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Other JX Topics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Other JX Topics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other/custom-domain/" title="Custom Domain" class="md-nav__link">
+      Custom Domain
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other/cluster-validation/" title="Cluster Validation" class="md-nav__link">
+      Cluster Validation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other/security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other/issue-trackers/" title="Issue Trackers" class="md-nav__link">
+      Issue Trackers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other/alt-git-repo/" title="Alt Git Repo" class="md-nav__link">
+      Alt Git Repo
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Kubernetes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../k8s/" title="Basics" class="md-nav__link">
+      Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../k8s/tools/" title="Tools" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../k8s/helm/" title="Helm" class="md-nav__link">
+      Helm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../k8s/knative-build/" title="Knative Build" class="md-nav__link">
+      Knative Build
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      BuildPack Demo
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        BuildPack Demo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../buildpack/import/" title="Import" class="md-nav__link">
+      Import
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../buildpack/" title="BuildPack" class="md-nav__link">
+      BuildPack
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      X-Files Demo
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        X-Files Demo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xfiles/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xfiles/mulder/" title="Mulder" class="md-nav__link">
+      Mulder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xfiles/scully/" title="Scully" class="md-nav__link">
+      Scully
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../xfiles/integration/" title="Integration" class="md-nav__link">
+      Integration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notes-from-slack" title="Notes from Slack" class="md-nav__link">
+    Notes from Slack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-tricks" title="Tips &amp; Tricks" class="md-nav__link">
+    Tips &amp; Tricks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiple-micro-services" title="Multiple Micro-services" class="md-nav__link">
+    Multiple Micro-services
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practices-principles" title="Practices &amp; Principles" class="md-nav__link">
+    Practices &amp; Principles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principles" title="Principles" class="md-nav__link">
+    Principles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practices" title="Practices" class="md-nav__link">
+    Practices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jx" title="JX" class="md-nav__link">
+    JX
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git" title="Git" class="md-nav__link">
+    Git
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" title="Docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kubernetes" title="Kubernetes" class="md-nav__link">
+    Kubernetes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validate-cluster-for-jenkins-x-compliance" title="Validate Cluster for Jenkins X Compliance" class="md-nav__link">
+    Validate Cluster for Jenkins X Compliance
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-compliance-check" title="Run compliance check" class="md-nav__link">
+    Run compliance check
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-compliance-run-status" title="Check Compliance run status" class="md-nav__link">
+    Check Compliance run status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-compliance-run-logs" title="Check Compliance run logs" class="md-nav__link">
+    Check Compliance run logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#see-compliance-run-results" title="See Compliance run results" class="md-nav__link">
+    See Compliance run results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup" title="Cleanup" class="md-nav__link">
+    Cleanup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helm" title="Helm" class="md-nav__link">
+    Helm
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-cases" title="Use Cases" class="md-nav__link">
+    Use Cases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture" title="Architecture" class="md-nav__link">
+    Architecture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chartmuseum" title="Chartmuseum" class="md-nav__link">
+    Chartmuseum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monocular" title="Monocular" class="md-nav__link">
+    Monocular
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitops" title="GitOps" class="md-nav__link">
+    GitOps
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#thoughts" title="Thoughts" class="md-nav__link">
+    Thoughts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-x-introduction_1" title="Jenkins X - Introduction" class="md-nav__link">
+    Jenkins X - Introduction
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how" title="How" class="md-nav__link">
+    How
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-x-installation" title="Jenkins X - Installation" class="md-nav__link">
+    Jenkins X - Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default" title="Default" class="md-nav__link">
+    Default
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform" title="Terraform" class="md-nav__link">
+    Terraform
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-only" title="Install only" class="md-nav__link">
+    Install only
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-premis" title="On-Premis" class="md-nav__link">
+    On-Premis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" title="Next Steps" class="md-nav__link">
+    Next Steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-x-ide-integration" title="Jenkins X - IDE Integration" class="md-nav__link">
+    Jenkins X - IDE Integration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visual-studio-code" title="Visual Studio Code" class="md-nav__link">
+    Visual Studio Code
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intelli-j" title="Intelli J" class="md-nav__link">
+    Intelli J
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-x-customization" title="Jenkins X - Customization" class="md-nav__link">
+    Jenkins X - Customization
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-parameters" title="Installation Parameters" class="md-nav__link">
+    Installation Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-configuration" title="Component Configuration" class="md-nav__link">
+    Component Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nexus" title="Nexus" class="md-nav__link">
+    Nexus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chartmuseum_1" title="Chartmuseum" class="md-nav__link">
+    Chartmuseum
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jenkins-image-used" title="Jenkins image used" class="md-nav__link">
+    Jenkins image used
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#alternative-docker-registry" title="Alternative Docker Registry" class="md-nav__link">
+    Alternative Docker Registry
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-x-basic-usage" title="Jenkins X - Basic Usage" class="md-nav__link">
+    Jenkins X - Basic Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-x-other-features" title="Jenkins X - Other Features" class="md-nav__link">
+    Jenkins X - Other Features
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams" title="Teams" class="md-nav__link">
+    Teams
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jx-shell" title="JX Shell" class="md-nav__link">
+    JX Shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jx-prompt" title="JX Prompt" class="md-nav__link">
+    JX Prompt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-tracker" title="Issue Tracker" class="md-nav__link">
+    Issue Tracker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github" title="GitHub" class="md-nav__link">
+    GitHub
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jira" title="Jira" class="md-nav__link">
+    Jira
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security" title="Security" class="md-nav__link">
+    Security
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anchore-image-scanning" title="Anchore image scanning" class="md-nav__link">
+    Anchore image scanning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#owasp-zap" title="OWASP ZAP" class="md-nav__link">
+    OWASP ZAP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-x-development-cycle" title="Jenkins X - Development Cycle" class="md-nav__link">
+    Jenkins X - Development Cycle
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#versioning" title="Versioning" class="md-nav__link">
+    Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devpod" title="DevPod" class="md-nav__link">
+    DevPod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-builder" title="Custom Builder" class="md-nav__link">
+    Custom Builder
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preview" title="Preview" class="md-nav__link">
+    Preview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-current-preview-environments" title="Get current preview environments" class="md-nav__link">
+    Get current preview environments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-preview-hook" title="Post Preview hook" class="md-nav__link">
+    Post Preview hook
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-dependencies" title="Add dependencies" class="md-nav__link">
+    Add dependencies
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#link-to-a-service" title="Link to a service" class="md-nav__link">
+    Link to a service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-helm-chart-dependency" title="Add helm chart dependency" class="md-nav__link">
+    Add helm chart dependency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promotion" title="Promotion" class="md-nav__link">
+    Promotion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-x-secrets" title="Jenkins X &amp; Secrets" class="md-nav__link">
+    Jenkins X &amp; Secrets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extending-jenkins-x" title="Extending Jenkins X" class="md-nav__link">
+    Extending Jenkins X
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-x-cloudbees-codeship" title="Jenkins X &amp; CloudBees CodeShip" class="md-nav__link">
+    Jenkins X &amp; CloudBees CodeShip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jenkins-x-the-future" title="Jenkins X &amp; The Future" class="md-nav__link">
+    Jenkins X &amp; The Future
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serverless" title="Serverless" class="md-nav__link">
+    Serverless
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-gen-pipeline" title="Next Gen Pipeline" class="md-nav__link">
+    Next Gen Pipeline
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/edit/master/docs/to-be-processed.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="jenkins-x-introduction">Jenkins X Introduction<a class="headerlink" href="#jenkins-x-introduction" title="Permanent link">&para;</a></h1>
+<h2 id="notes-from-slack">Notes from Slack<a class="headerlink" href="#notes-from-slack" title="Permanent link">&para;</a></h2>
+<h2 id="tips-tricks">Tips &amp; Tricks<a class="headerlink" href="#tips-tricks" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/jenkinsci/kubernetes-credentials-provider-plugin">https://github.com/jenkinsci/kubernetes-credentials-provider-plugin</a></li>
+<li>volume storage with Heptio's Valerio</li>
+<li>debugging: <a href="https://jenkins-x.io/contribute/development/#debugging">https://jenkins-x.io/contribute/development/#debugging</a></li>
+<li><code>--gitops</code> mode &larr; have to check this</li>
+<li><code>jx upgrade platform</code></li>
+<li><a href="https://github.com/knative/docs/blob/master/build/auth.md#basic-authentication-git">knative authentication</a></li>
+<li><code>--git-username</code> &amp; <code>--org</code> are complimentary, <code>--organisations</code> is unrelated<ul>
+<li>username = the user for the repo's (apps &amp; env)</li>
+<li>org = the organization for the repo's (apps &amp; env)</li>
+<li>e.g.: <code>--git-username joostvdg --org demomon</code></li>
+<li><code>--organisations</code> is used to query GitHub for Quickstarts (no need to specify unless you have alternatives)</li>
+</ul>
+</li>
+<li>Jenkins configurations do not persist<ul>
+<li>you can specify them in a ConfigMap though</li>
+<li><a href="https://github.com/jenkins-x/charts/blob/jenkins/stable/jenkins/templates/config.yaml#L8">https://github.com/jenkins-x/charts/blob/jenkins/stable/jenkins/templates/config.yaml#L8</a></li>
+</ul>
+</li>
+<li>credentials used for config can be found here: <code>~/.jx/jenkinsAuth.yam</code></li>
+<li>PodTemplates (static Jenkins) are from the <a href="https://github.com/jenkinsci/kubernetes-plugin">Jenkins Kubernetes Plugin</a></li>
+<li>cleanup GKE <code>jx gc gke</code></li>
+<li>you can create separate teams with <code>--no-tiller</code> even if the installation was done with Tiller</li>
+<li><code>jx init</code> to "fix" a outdated <code>~/.jx</code> folder</li>
+<li><a href="https://jenkins-x.io/commands/jx_step_credential/">https://jenkins-x.io/commands/jx_step_credential/</a></li>
+<li>don't do mono repo's<ul>
+<li>why? -&gt; <a href="https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b">https://medium.com/@mattklein123/monorepos-please-dont-e9a279be011b</a></li>
+<li>but if you do, <a href="https://fuchsia.googlesource.com/jiri/">https://fuchsia.googlesource.com/jiri/</a></li>
+</ul>
+</li>
+<li>using a different git provider<ul>
+<li>--git-provider-url .... --git-provider-kind bitbucketserver --git-username foo --git-api-token whatever</li>
+<li><a href="https://jenkins-x.io/developing/git/#using-a-different-git-provider-for-environments">https://jenkins-x.io/developing/git/#using-a-different-git-provider-for-environments</a></li>
+</ul>
+</li>
+<li><code>jx start pipeline</code> to manually trigger a pipeline (I assume static Jenkins only)</li>
+<li>enable GCS for chartmuseum backend<ul>
+<li><a href="https://github.com/jenkins-x/cloud-environments/blob/master/env-jx-infra/myvalues.yaml#L10-L17">https://github.com/jenkins-x/cloud-environments/blob/master/env-jx-infra/myvalues.yaml#L10-L17</a></li>
+</ul>
+</li>
+<li><code>jx</code> wraps <code>kubectx</code> tool, so you can use <code>jx ns &lt;namespace&gt;</code> to change your context to a different namespace</li>
+<li>faq for diagnosing <code>exposecontroller</code> issues:<ul>
+<li><a href="https://jenkins-x.io/faq/issues/#how-can-i-diagnose-exposecontroller-issues">https://jenkins-x.io/faq/issues/#how-can-i-diagnose-exposecontroller-issues</a></li>
+<li>controller is used to generate ingress resources</li>
+</ul>
+</li>
+<li><a href="https://github.com/lvlstudio/jenkins-x-builders/tree/master/builder-nodejs-mysql">https://github.com/lvlstudio/jenkins-x-builders/tree/master/builder-nodejs-mysql</a></li>
+<li><a href="https://github.com/jenkins-x/jx/issues/2550">https://github.com/jenkins-x/jx/issues/2550</a></li>
+<li><a href="https://github.com/jenkins-x/jenkins-x-platform/issues/4768">https://github.com/jenkins-x/jenkins-x-platform/issues/4768</a></li>
+<li>Tillerless: <a href="https://jenkins-x.io/news/helm-without-tiller/">https://jenkins-x.io/news/helm-without-tiller/</a></li>
+<li>difference between <code>jx create quickstart</code> and selecting spring vs. <code>jx create spring</code><ul>
+<li><code>jx create spring</code> is an interactive wizard that uses the spring initialiser <a href="https://start.spring.io/">https://start.spring.io/</a></li>
+<li><code>jx create quickstart</code> uses a configurable github org to list available existing quickstarts i.e. <a href="https://github.com/jenkins-x-quickstarts">https://github.com/jenkins-x-quickstarts</a> (edited)</li>
+</ul>
+</li>
+<li>multi-cluster support: <ul>
+<li><a href="https://github.com/jenkins-x-charts/environment-controller">https://github.com/jenkins-x-charts/environment-controller</a></li>
+<li><a href="https://github.com/jenkins-x/jx/issues/479">https://github.com/jenkins-x/jx/issues/479</a></li>
+</ul>
+</li>
+<li><code>jx create user</code>?</li>
+<li><a href="https://jenkins-x.io/commands/jx_create_jenkins_token/">https://jenkins-x.io/commands/jx_create_jenkins_token/</a></li>
+<li>for problems with wild card certificates doing only one segment (i.e., <code>*.example.com</code> instead of <code>*.*.example.com</code>)<ul>
+<li>no - we can tweak that. It’s easiest with wildcard - then any exposed service at <code>svc.ns.domain</code> just works - but you could register each namespace in DNS</li>
+<li>we’ve not exposed that property to the <code>jx install</code> CLI yet - but you could try <code>kubectl edit cm ingress-config</code></li>
+<li><code>urltemplate: &quot;{{.Service}}-{{.Namespace}}.{{.Domain}}&quot;</code></li>
+<li>and then <code>jx upgrade ingress</code></li>
+<li>doesn't seem to work yet? (customization gets reverted)</li>
+<li>alternative, add dns entries to the ingress resources</li>
+<li><a href="https://jenkins-x.io/getting-started/install-on-cluster/#installing-jenkins-x-on-premise">https://jenkins-x.io/getting-started/install-on-cluster/#installing-jenkins-x-on-premise</a></li>
+</ul>
+</li>
+<li>Helm tips &amp; tricks for changing secrets<ul>
+<li><a href="https://github.com/helm/helm/blob/master/docs/charts_tips_and_tricks.md#user-content-automatically-roll-deployments-when-configmaps-or-secrets-change">https://github.com/helm/helm/blob/master/docs/charts_tips_and_tricks.md#user-content-automatically-roll-deployments-when-configmaps-or-secrets-change</a></li>
+</ul>
+</li>
+<li>how to run integration tests<ul>
+<li>I've answered this in a previous thread. Basically you use the helm chart (which includes the service dependencies as requirements). You create a preview but set the replicaCount for your service to 0 (that way, just the requirements are started). Then just run your tests against the requirements and delete the preview afterwards. Search the channel history for my messages and replicaCount. You should find it.</li>
+<li><a href="https://jenkins-x.io/faq/develop/#how-do-i-add-other-services-into-a-preview">https://jenkins-x.io/faq/develop/#how-do-i-add-other-services-into-a-preview</a></li>
+</ul>
+</li>
+<li>managing static jenkins config has some issues<ul>
+<li><a href="https://github.com/jenkins-x/jx/issues/2991">https://github.com/jenkins-x/jx/issues/2991</a></li>
+<li><a href="https://github.com/jenkins-x/jx-docs/issues/1039">https://github.com/jenkins-x/jx-docs/issues/1039</a></li>
+<li><a href="https://github.com/helm/charts/pull/9296/files">https://github.com/helm/charts/pull/9296/files</a></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>we’re super close from recommending folks use <code>jx create cluster ... --vault --gitops</code>  which uses a git repository to store all the configuration changes + versions of stuff - and uses Vault to store all secrets</p>
+<p>we just merged the last few fixes so it should work for static jenkins servers with the latest <code>jx</code> binary - feb 7</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>It is Ready: <code>jx create cluster gke --vault --gitops --no-tiller</code></p>
+</div>
+<h3 id="multiple-micro-services">Multiple Micro-services<a class="headerlink" href="#multiple-micro-services" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>if 1 microservice was 1 helm chart with a few different containers for example; you may have a few repos that just make binaries/docker images - then 1 repo which contains the helm chart of the microservice - you can also easily combine microservices together into an uber helm chart - James Strachan</p>
+<p>we prefer to use multiple repositories so that things are more microservice based. The problem with monorepos is everything gets released on every change; with separate repos its easier to manage change etc</p>
+<p>to handle changing versions of things across repositories we use <code>updatebot</code> ourselves to do ‘CI/CD of dependencies’ - we kinda think of it as promotion of dependencies like we promote microservices into environments - its PRs generated as part of the release process</p>
+<p>the main decision to make really is, , if you have, say, 3 microservices that are fairly tightly coupled; do you combine 3 versions of them all into 1 chart and then release that 1 chart when its all tested together; or do you release the 3 things totally independently - it depeends on coupling and team structure really &amp; you can switch from one to the other at any time really</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/jenkins-x/updatebot">https://github.com/jenkins-x/updatebot</a></li>
+</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Setup:</span>
+$ jx create cluster gke -n team1 --default-environment-prefix team1 
+$ jx create quickstart -p app1
+$ jx create quickstart -p app2
+$ jx create quickstart -p app3
+
+<span class="c1"># The 5 repos:</span>
+environment-team1-staging
+environment-team1-production
+app1
+app2
+app3
+</pre></div>
+</td></tr></table>
+
+<h2 id="practices-principles">Practices &amp; Principles<a class="headerlink" href="#practices-principles" title="Permanent link">&para;</a></h2>
+<h3 id="principles">Principles<a class="headerlink" href="#principles" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Faster time to market</li>
+<li>Improved deployment frequency</li>
+<li>Shorter time between fixes</li>
+<li>Lower failure rate of releases</li>
+<li>Faster Mean Time To Recovery</li>
+</ul>
+<h3 id="practices">Practices<a class="headerlink" href="#practices" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Loosely-coupled Architectures</li>
+<li>Self-service Configuration</li>
+<li>Automated Provisioning</li>
+<li>Continuous Build / Integration and Delivery</li>
+<li>Automated Release Management</li>
+<li>Incremental Testing</li>
+<li>Infrastructure Configuration as Code</li>
+<li>Comprehensive configuration management</li>
+<li>Trunk based development and feature flags</li>
+</ul>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Primary</p>
+<ul>
+<li>jx</li>
+<li>Git</li>
+<li>Docker</li>
+<li>Kubernetes</li>
+<li>Helm</li>
+</ul>
+<p>Secondary</p>
+<ul>
+<li>Nexus</li>
+<li>GitOps</li>
+<li>Skaffold</li>
+<li>KNative</li>
+<li>Prow</li>
+<li>KSync</li>
+</ul>
+<h3 id="jx">JX<a class="headerlink" href="#jx" title="Permanent link">&para;</a></h3>
+<h3 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
+<h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<h3 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>any public cloud will do</li>
+<li>GKE is recommended</li>
+</ul>
+<h4 id="validate-cluster-for-jenkins-x-compliance">Validate Cluster for Jenkins X Compliance<a class="headerlink" href="#validate-cluster-for-jenkins-x-compliance" title="Permanent link">&para;</a></h4>
+<p>You can <a href="https://www.cloudbees.com/blog/your-cluster-ready-jenkins-x">read this article from Viktor Farcic</a> on how to confirm if your cluster is compliant with Jenkins X's requirements.</p>
+<p>Jenkins X has a binary, called <code>jx</code>, which includes some facilities from the <a href="https://github.com/heptio/sonobuoy">Sonobuoy SDK</a> to provide some validation capabilities.</p>
+<h5 id="run-compliance-check">Run compliance check<a class="headerlink" href="#run-compliance-check" title="Permanent link">&para;</a></h5>
+<p>To run the compliance check, just use the <code>jx</code> command below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx compliance run
+</pre></div>
+</td></tr></table>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The compliance check will run for about one hour!</p>
+</div>
+<h5 id="check-compliance-run-status">Check Compliance run status<a class="headerlink" href="#check-compliance-run-status" title="Permanent link">&para;</a></h5>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx compliance status
+</pre></div>
+</td></tr></table>
+
+<h5 id="check-compliance-run-logs">Check Compliance run logs<a class="headerlink" href="#check-compliance-run-logs" title="Permanent link">&para;</a></h5>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx compliance logs -f
+</pre></div>
+</td></tr></table>
+
+<h5 id="see-compliance-run-results">See Compliance run results<a class="headerlink" href="#see-compliance-run-results" title="Permanent link">&para;</a></h5>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx compliance results
+</pre></div>
+</td></tr></table>
+
+<h5 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h5>
+<p>Once you're done with the compliance run, you can clean up any resources it created for the run.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx compliance delete
+</pre></div>
+</td></tr></table>
+
+<h3 id="helm">Helm<a class="headerlink" href="#helm" title="Permanent link">&para;</a></h3>
+<ul>
+<li>package manager for Kubernetes</li>
+<li>quivalent to <code>yum install &lt;package&gt;</code></li>
+<li>Kubernetes manifest template (Go templates), packaged and versioned, reffered to as <code>Charts</code></li>
+</ul>
+<h4 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">&para;</a></h4>
+<ul>
+<li>manages packages, repositories and installations</li>
+<li>manage dependencies to other Charts<ul>
+<li>meaning: you can create bundles</li>
+</ul>
+</li>
+<li>allows for customizing standardized installations on Kubernetes<ul>
+<li>for example: MySQL database with specific database, users and settings</li>
+</ul>
+</li>
+<li>used as building blocks in other tools</li>
+<li>separate packaging (Chart) from runtime (application image)<ul>
+<li>there's the chart version</li>
+<li>and the application version</li>
+</ul>
+</li>
+</ul>
+<h4 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Helm repository = a hosted <code>index.yaml</code></li>
+<li>client (<code>helm</code>) and server (<code>tiller</code>) component</li>
+</ul>
+<h4 id="chartmuseum">Chartmuseum<a class="headerlink" href="#chartmuseum" title="Permanent link">&para;</a></h4>
+<ul>
+<li>lightweight Helm chart repository<ul>
+<li>alternatives are Artifactory, Nexus 3, but are heavy "support all package types" kind of tools</li>
+</ul>
+</li>
+<li>supports different storage options<ul>
+<li>local (e.g., Kubernetes volume)</li>
+<li>S3 / Minio</li>
+<li>Google Cloud Storage</li>
+<li>Azure Blob Store</li>
+<li>Alibaba Cloud OSS storage</li>
+<li>Openstack Object Storage</li>
+</ul>
+</li>
+</ul>
+<h4 id="monocular">Monocular<a class="headerlink" href="#monocular" title="Permanent link">&para;</a></h4>
+<ul>
+<li>UI for Helm repositories</li>
+<li>includes documentation and searching</li>
+<li>can give insight into charts installed in the cluster via helm</li>
+</ul>
+<h3 id="gitops">GitOps<a class="headerlink" href="#gitops" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.weave.works/blog/gitops-operations-by-pull-request">https://www.weave.works/blog/gitops-operations-by-pull-request</a></li>
+<li><a href="https://www.weave.works/blog/what-is-gitops-really">https://www.weave.works/blog/what-is-gitops-really</a></li>
+<li><a href="https://www.cloudbees.com/blog/gitops-dev-dash-ops">https://www.cloudbees.com/blog/gitops-dev-dash-ops</a></li>
+<li><a href="https://developer.atlassian.com/blog/2017/07/kubernetes-workflow/">https://developer.atlassian.com/blog/2017/07/kubernetes-workflow/</a></li>
+</ul>
+<h4 id="thoughts">Thoughts<a class="headerlink" href="#thoughts" title="Permanent link">&para;</a></h4>
+<ul>
+<li>declarative specification for each environment</li>
+<li>auditable changes</li>
+<li>ability to verify live what is vs. what should be<ul>
+<li>aside from autoscaling and the like</li>
+<li>for example, with <a href="https://github.com/weaveworks/kubediff">Kubediff</a></li>
+</ul>
+</li>
+<li>reproducable environments</li>
+<li>helps automate and spead up <code>Segragation of Duties</code></li>
+<li>use PullRequests for change management</li>
+<li>eventual consistency via event based reconciliation<ul>
+<li>e.g., Git commit event -&gt; pipeline -&gt; update based on spec</li>
+</ul>
+</li>
+</ul>
+<h2 id="jenkins-x-introduction_1">Jenkins X - Introduction<a class="headerlink" href="#jenkins-x-introduction_1" title="Permanent link">&para;</a></h2>
+<p>The challenges Jenkins X tries to solve:</p>
+<ul>
+<li>good way to setup Kubernetes environments</li>
+<li>containerize your applications</li>
+<li>deploy containerized applications to Kubernetes</li>
+<li>adopt Continuous Delivery / Progressive Delivery</li>
+<li>base platform for automation</li>
+<li>keeping focus on delivering value instead of HOW to deliver the value</li>
+<li>help embed proven practices from the <code>State of DevOps Report</code></li>
+</ul>
+<h3 id="how">How<a class="headerlink" href="#how" title="Permanent link">&para;</a></h3>
+<ul>
+<li>automates installations of all the basic building blocks for CI, CD and PD<ul>
+<li>helm, skaffold, kaniko, jenkins, ksync, knative, nexus, monocular, chartmuseum,...</li>
+<li>pre-configured, ready to go</li>
+</ul>
+</li>
+<li>automates CI/CD setup (PD setup is coming)<ul>
+<li>Docker image</li>
+<li>Helm chart</li>
+<li>(Jenkins) Pipeline</li>
+<li>Event trigger management (e.g., GitHub event triggers for Pipelines)</li>
+</ul>
+</li>
+<li>pre-configured GitOps environments + pipelines for managing environment promotion</li>
+<li>feedback &amp; interaction<ul>
+<li>logs, notification hooks, caches</li>
+<li>labels and comments on GitHub issue / PR</li>
+<li>PR chatbot</li>
+</ul>
+</li>
+</ul>
+<h2 id="jenkins-x-installation">Jenkins X - Installation<a class="headerlink" href="#jenkins-x-installation" title="Permanent link">&para;</a></h2>
+<p>There's four ways to install Jenkins X.</p>
+<ul>
+<li>install in an existing public cloud Kubernetes cluster <code>jx install</code></li>
+<li>create cluster and installation via public cloud's CLI (e.g., <code>gcloud</code>)</li>
+<li>create cluster and installation via <a href="https://www.terraform.io/">Terraform</a> (where applicable)</li>
+<li>install Jenkins X in an on-premise Kubernetes cluster (requirements apply)</li>
+</ul>
+<p>During the installation, the following things will be done via the <code>jx</code> binary.</p>
+<p>If you're using Mac OS X, the <code>jx</code> binary will install any missing tool via <code>homebrew</code>.</p>
+<ul>
+<li>install Helm</li>
+<li>install cloud provider cli</li>
+<li>install kubectl</li>
+<li>create cluster (unless an install only option is used)</li>
+<li>create Jenkins X <code>namespace</code></li>
+<li>install Tiller (unless helm 3 or tillerless is specified)</li>
+<li>setup basic ingress controller</li>
+<li>install several CI/CD tools<ul>
+<li>chartmuseum</li>
+<li>docker-registry</li>
+<li>jenkins</li>
+<li>monocular</li>
+<li>nexus</li>
+</ul>
+</li>
+<li>configure git source repository</li>
+<li>create admin secrets</li>
+</ul>
+<p>The installation can be configured with flags in order to customize how each step is executed.</p>
+<h3 id="default">Default<a class="headerlink" href="#default" title="Permanent link">&para;</a></h3>
+<h3 id="terraform">Terraform<a class="headerlink" href="#terraform" title="Permanent link">&para;</a></h3>
+<h3 id="install-only">Install only<a class="headerlink" href="#install-only" title="Permanent link">&para;</a></h3>
+<h3 id="on-premis">On-Premis<a class="headerlink" href="#on-premis" title="Permanent link">&para;</a></h3>
+<h3 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h3>
+<ul>
+<li>create and app via quickstart</li>
+<li>import and existing app</li>
+<li>customize your Jenkins X installation</li>
+</ul>
+<h2 id="jenkins-x-ide-integration">Jenkins X - IDE Integration<a class="headerlink" href="#jenkins-x-ide-integration" title="Permanent link">&para;</a></h2>
+<p>You read all about <a href="https://jenkins-x.io/developing/ide/">Jenkins X's IDE integration in the docs</a>.</p>
+<h3 id="visual-studio-code">Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permanent link">&para;</a></h3>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a> is a popular open source IDE from Microsoft.</p>
+<p>The Jenkins X team created the <a href="https://github.com/jenkins-x/vscode-jx-tools">vscode-jx-tools</a> extension for VS Code.</p>
+<h3 id="intelli-j">Intelli J<a class="headerlink" href="#intelli-j" title="Permanent link">&para;</a></h3>
+<p>There's a plugin for <a href="https://www.jetbrains.com/idea/">IntelliJ</a> and the associated IDEs like WebStorm, GoLand, PyCharm et al from <a href="https://www.jetbrains.com/">JetBrains</a>.</p>
+<p>You can find the <a href="https://plugins.jetbrains.com/plugin/11099-jenkins-x">Jenkins X plugin for IntelliJ here</a>.</p>
+<h2 id="jenkins-x-customization">Jenkins X - Customization<a class="headerlink" href="#jenkins-x-customization" title="Permanent link">&para;</a></h2>
+<h3 id="installation-parameters">Installation Parameters<a class="headerlink" href="#installation-parameters" title="Permanent link">&para;</a></h3>
+<h3 id="component-configuration">Component Configuration<a class="headerlink" href="#component-configuration" title="Permanent link">&para;</a></h3>
+<p>During installation (incl. or excl. cluster creation) Jenkins X will read a <code>myvalues.yaml</code> file in the current directory to configure its core components.</p>
+<p>You <a href="https://jenkins-x.io/getting-started/config/">can read more about all the options here</a>, but below are some examples.</p>
+<h4 id="nexus">Nexus<a class="headerlink" href="#nexus" title="Permanent link">&para;</a></h4>
+<p>You might not want to include Nexus in your installation, the snippet below will exclude it from being installed.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">nexus</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">enabled</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="l l-Scalar l-Scalar-Plain">nexusServiceLink</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">enabled</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="l l-Scalar l-Scalar-Plain">externalName</span><span class="p p-Indicator">:</span> <span class="s">&quot;nexus.jx.svc.cluster.local&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="chartmuseum_1">Chartmuseum<a class="headerlink" href="#chartmuseum_1" title="Permanent link">&para;</a></h4>
+<p>Add the below snippet in order to skip installing Chartmuseum.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">chartmuseum</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">enabled</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="l l-Scalar l-Scalar-Plain">chartmuseumServiceLink</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">enabled</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="l l-Scalar l-Scalar-Plain">externalName</span><span class="p p-Indicator">:</span> <span class="s">&quot;jenkins-x-chartmuseum.jx.svc.cluster.local&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="jenkins-image-used">Jenkins image used<a class="headerlink" href="#jenkins-image-used" title="Permanent link">&para;</a></h4>
+<p>When using the static Jenkins type of installation, Jenkins X uses the <a href="https://hub.docker.com/r/jenkinsxio/jenkinsx/">jenkinsxio/jenkinsx</a> docker image. You specify an alternative image in the <code>myvalues.yaml</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">jenkins</span><span class="p p-Indicator">:</span>
+  <span class="l l-Scalar l-Scalar-Plain">Master</span><span class="p p-Indicator">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">Image</span><span class="p p-Indicator">:</span> <span class="s">&quot;acme/my-jenkinsx&quot;</span>
+    <span class="l l-Scalar l-Scalar-Plain">ImageTag</span><span class="p p-Indicator">:</span> <span class="s">&quot;1.2.3&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<p>For how to create your custom Jenkins image, <a href="https://jenkins-x.io/getting-started/config/#jenkins-image">read the Jenkins X docs</a>.</p>
+<h4 id="alternative-docker-registry">Alternative Docker Registry<a class="headerlink" href="#alternative-docker-registry" title="Permanent link">&para;</a></h4>
+<p>Currently - March 2019 - you can only specify the docker registry during the installation (<code>jx create cluster</code> or <code>jx install</code>) via a flag.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx create cluster gke --docker-registry eu.gcr.io
+</pre></div>
+</td></tr></table>
+
+<p>You will have to configure the docker authentication secret as well.
+How to do this, <a href="https://jenkins-x.io/architecture/docker-registry/#update-the-config-json-secret">you can read in the Jenkins X documentation</a>.</p>
+<h2 id="jenkins-x-basic-usage">Jenkins X - Basic Usage<a class="headerlink" href="#jenkins-x-basic-usage" title="Permanent link">&para;</a></h2>
+<ul>
+<li>import</li>
+<li>quickstart</li>
+<li>console</li>
+<li>pipelines</li>
+<li>promote</li>
+<li>environments</li>
+<li>applications</li>
+<li>teams</li>
+</ul>
+<h2 id="jenkins-x-other-features">Jenkins X - Other Features<a class="headerlink" href="#jenkins-x-other-features" title="Permanent link">&para;</a></h2>
+<h3 id="teams">Teams<a class="headerlink" href="#teams" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://jenkins-x.io/about/features/#teams">https://jenkins-x.io/about/features/#teams</a></li>
+</ul>
+<h3 id="jx-shell">JX Shell<a class="headerlink" href="#jx-shell" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Create a sub shell so that changes to the Kubernetes context, namespace or environment remain local to the shell</p>
+</blockquote>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># create a new shell using a specific named context</span>
+jx shell prod-cluster
+</pre></div>
+</td></tr></table>
+
+<h3 id="jx-prompt">JX Prompt<a class="headerlink" href="#jx-prompt" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Generate the command line prompt for the current team and environment</p>
+</blockquote>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">current</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Generate the current prompt</span>
+jx prompt
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">bash</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Enable the prompt for bash</span>
+<span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;[\u@\h \W \$(jx prompt)]\$ &quot;</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_1" type="radio" id="__tab_1_2" />
+<label for="__tab_1_2">zsh</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># Enable the prompt for zsh</span>
+<span class="nv">PROMPT</span><span class="o">=</span><span class="s1">&#39;$(jx prompt)&#39;</span><span class="nv">$PROMPT</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<h3 id="issue-tracker">Issue Tracker<a class="headerlink" href="#issue-tracker" title="Permanent link">&para;</a></h3>
+<p><a href="https://jenkins-x.io/developing/issues/">Jenkins X can work with issue trackers</a> such as GitHub issues and Jira.</p>
+<p>By default, Jenkins X will use GitHub for projects and issues.
+So if you haven't specified anything for either Git provider or Issue tracker, it will use GitHub for issues.</p>
+<h4 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx create issue -t <span class="s2">&quot;lets make things more awesome&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx get issues
+</pre></div>
+</td></tr></table>
+
+<h4 id="jira">Jira<a class="headerlink" href="#jira" title="Permanent link">&para;</a></h4>
+<p>In order to configure Jenkins X to use Jira as issue tracker, you have to do three steps.</p>
+<ol>
+<li>create a tracker configuration <code>jx create tracker server ${trackerName} https://mycompany.atlassian.net/</code></li>
+<li>create a tracker login <code>jx create tracker token -n ${trackerName}  myEmailAddress</code></li>
+<li>configure your Jenkins X managed project to use this issue tracker instead <code>jx edit config -k issues</code></li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>A file called jenkins-x.yml will be modified in your project source code which should be added to your git repository.</p>
+</div>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h3>
+<p>Jenkins X <a href="https://jenkins-x.io/developing/security-features/">has direct support for some security analysis</a>.</p>
+<h4 id="anchore-image-scanning">Anchore image scanning<a class="headerlink" href="#anchore-image-scanning" title="Permanent link">&para;</a></h4>
+<p>The <a href="https://github.com/anchore/anchore-engine">Anchore Engine</a> is used to provide image security, by examining contents of containers either in pull request/review state, or on running containers.</p>
+<p>This was introduced in this <a href="https://jenkins.io/blog/2018/05/08/jenkins-x-anchore/">blog post</a>.
+<a href="https://youtu.be/rB8Sw0FqCQk">Here is a video</a> demonstrating it live.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx create addon anchore
+</pre></div>
+</td></tr></table>
+
+<p>To see if it found any problems in a specific environment:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx get cve --environment<span class="o">=</span>staging
+</pre></div>
+</td></tr></table>
+
+<h4 id="owasp-zap">OWASP ZAP<a class="headerlink" href="#owasp-zap" title="Permanent link">&para;</a></h4>
+<p>ZAP or <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">Zed Attack Proxy</a> allows you to scan the public surface of your application for any known vulnerability.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx create addon owasp-zap
+</pre></div>
+</td></tr></table>
+
+<h2 id="jenkins-x-development-cycle">Jenkins X - Development Cycle<a class="headerlink" href="#jenkins-x-development-cycle" title="Permanent link">&para;</a></h2>
+<h3 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h3>
+<ul>
+<li>semver semantics</li>
+<li>using git tags</li>
+<li><a href="https://github.com/jenkins-x/jx-release-version">https://github.com/jenkins-x/jx-release-version</a></li>
+<li><a href="https://www.cloudbees.com/blog/automatically-versioning-your-application-jenkins-x">https://www.cloudbees.com/blog/automatically-versioning-your-application-jenkins-x</a></li>
+</ul>
+<h3 id="devpod">DevPod<a class="headerlink" href="#devpod" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://jenkins-x.io/developing/devpods/">https://jenkins-x.io/developing/devpods/</a></li>
+</ul>
+<h3 id="custom-builder">Custom Builder<a class="headerlink" href="#custom-builder" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://jenkins-x.io/getting-started/create-custom-builder/">https://jenkins-x.io/getting-started/create-custom-builder/</a></li>
+</ul>
+<h3 id="preview">Preview<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h3>
+<p>A new preview is created when you create a PullRequest (PR) on a Jenkins X managed application.</p>
+<ol>
+<li>builds the application</li>
+<li>packages it into a Helm chart</li>
+<li>creates a unique Kubernetes namespace -only on first build</li>
+<li>deploys the application into the namespace</li>
+<li>
+<p>adds a pull request comment with preview environment URL</p>
+</li>
+<li>
+<p><a href="https://jenkins-x.io/about/features/#preview-environments">https://jenkins-x.io/about/features/#preview-environments</a></p>
+</li>
+<li><a href="https://jenkins-x.io/developing/preview/#adding-more-resources">https://jenkins-x.io/developing/preview/#adding-more-resources</a></li>
+<li><a href="https://medium.com/@vbehar/zero-cost-preview-environments-on-kubernetes-with-jenkins-x-and-osiris-bd9ce0148d03">https://medium.com/@vbehar/zero-cost-preview-environments-on-kubernetes-with-jenkins-x-and-osiris-bd9ce0148d03</a></li>
+<li><a href="https://medium.com/@MichalFoksa/jenkins-x-preview-environment-3bf2424a05e4">https://medium.com/@MichalFoksa/jenkins-x-preview-environment-3bf2424a05e4</a></li>
+</ol>
+<h4 id="get-current-preview-environments">Get current preview environments<a class="headerlink" href="#get-current-preview-environments" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx get previews
+</pre></div>
+</td></tr></table>
+
+<h4 id="post-preview-hook">Post Preview hook<a class="headerlink" href="#post-preview-hook" title="Permanent link">&para;</a></h4>
+<p>Jenkins X allows you to extend it at several points.
+One such extension point is the <code>preview</code> process.</p>
+<p>You can <a href="https://jenkins-x.io/developing/preview/#post-preview-jobs">extends the preview process with a post preview hook</a>.</p>
+<h4 id="add-dependencies">Add dependencies<a class="headerlink" href="#add-dependencies" title="Permanent link">&para;</a></h4>
+<p>Your application might depend on other services or facilities, that are generally present in your staging and production environment. With the move to clusters, these can have become a cluster function,</p>
+<p>These cluster functions might not be available in your temporary preview environment.
+Or you want to test your application against multiple versions of its dependencies.</p>
+<p>So you need the ability to specify these dependencies for the preview of your app which should only be used for the preview environment.</p>
+<p>This can be done in two ways.</p>
+<ol>
+<li>link Kubernetes service from other environment /namespace</li>
+<li>create an instance of a dependency in the preview environment through Helm chart.</li>
+</ol>
+<h5 id="link-to-a-service">Link to a service<a class="headerlink" href="#link-to-a-service" title="Permanent link">&para;</a></h5>
+<p>Via the <code>jx</code> step <a href="https://jenkins-x.io/commands/jx_step_link/">link service</a> you connect your preview app with a Jenkins X managed service elsewhere in the same cluster.</p>
+<p>Example:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx step link services --from-namespace jx-staging --includes <span class="s2">&quot;*&quot;</span> --excludes <span class="s2">&quot;cheese*&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="add-helm-chart-dependency">Add helm chart dependency<a class="headerlink" href="#add-helm-chart-dependency" title="Permanent link">&para;</a></h4>
+<p>The preview environment has its own helm chart, in the folder <code>charts/preview</code>.
+You can add dependencies in here, just like in any other helm chart.</p>
+<p>Just make sure the chart ends with the dependency on your app (in <code>charts/appName</code>) and an empty line, as the file's comment says.</p>
+<h3 id="promotion">Promotion<a class="headerlink" href="#promotion" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://jenkins-x.io/faq/develop/#how-does-promotion-actually-work">https://jenkins-x.io/faq/develop/#how-does-promotion-actually-work</a></li>
+<li><a href="https://jenkins-x.io/developing/promote/">https://jenkins-x.io/developing/promote/</a></li>
+</ul>
+<h2 id="jenkins-x-secrets">Jenkins X &amp; Secrets<a class="headerlink" href="#jenkins-x-secrets" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/futuresimple/helm-secrets">https://github.com/futuresimple/helm-secrets</a></li>
+<li><a href="https://developer.epages.com/blog/tech-stories/kubernetes-deployments-with-helm-secrets/">https://developer.epages.com/blog/tech-stories/kubernetes-deployments-with-helm-secrets/</a></li>
+<li>vault operator / addon?</li>
+<li>secrets for preview example: <a href="https://github.com/Zenika/snowcamp-2019-sncf-timesheet-reader">https://github.com/Zenika/snowcamp-2019-sncf-timesheet-reader</a><ul>
+<li>or this: <a href="https://github.com/Riduidel/snowcamp-2019">https://github.com/Riduidel/snowcamp-2019</a></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>thanks! helm secrets was the only choice available initially but we’re moving more towards using the vault operator instead - though we need some more docs and demos to show how to use secrets in vault from a Preview or Staging environment - James Strachan</p>
+</blockquote>
+<h2 id="extending-jenkins-x">Extending Jenkins X<a class="headerlink" href="#extending-jenkins-x" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://jenkins-x.io/extending/">https://jenkins-x.io/extending/</a></li>
+</ul>
+<h2 id="jenkins-x-cloudbees-codeship">Jenkins X &amp; CloudBees CodeShip<a class="headerlink" href="#jenkins-x-cloudbees-codeship" title="Permanent link">&para;</a></h2>
+<h2 id="jenkins-x-the-future">Jenkins X &amp; The Future<a class="headerlink" href="#jenkins-x-the-future" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Serverless Jenkins</li>
+<li>Tekton aka Next Gen(eration) Pipeline</li>
+</ul>
+<h3 id="serverless">Serverless<a class="headerlink" href="#serverless" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870">https://medium.com/@jdrawlings/serverless-jenkins-with-jenkins-x-9134cbfe6870</a></li>
+<li><a href="https://github.com/jenkinsci/jenkinsfile-runner">https://github.com/jenkinsci/jenkinsfile-runner</a></li>
+</ul>
+<h3 id="next-gen-pipeline">Next Gen Pipeline<a class="headerlink" href="#next-gen-pipeline" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.cloudbees.com/blog/move-toward-next-generation-pipelines">https://www.cloudbees.com/blog/move-toward-next-generation-pipelines</a></li>
+<li><a href="https://jenkins-x.io/news/jenkins-x-next-gen-pipeline-engine/">https://jenkins-x.io/news/jenkins-x-next-gen-pipeline-engine/</a></li>
+<li><a href="https://github.com/tektoncd/pipeline#-tekton-pipelines">https://github.com/tektoncd/pipeline#-tekton-pipelines</a></li>
+<li><a href="https://github.com/jenkins-x/jx/issues/3225">https://github.com/jenkins-x/jx/issues/3225</a></li>
+<li><a href="https://jenkins-x.io/getting-started/next-gen-pipeline/">https://jenkins-x.io/getting-started/next-gen-pipeline/</a></li>
+<li><a href="https://github.com/jenkins-x/jx/issues/3223">https://github.com/jenkins-x/jx/issues/3223</a></li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Joost van der Griendt
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/joostvdg" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/joost_vdg" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/joostvdg" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

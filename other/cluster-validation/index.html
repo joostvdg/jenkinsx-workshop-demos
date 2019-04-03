@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/knative-build/">
+        <link rel="canonical" href="https://joostvdg.github.io/jenkinsx-workshop-demos/other/cluster-validation/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Knative Build - Jay's Jenkins X Workshop</title>
+        <title>Cluster Validation - Jay's Jenkins X Workshop</title>
       
     
     
@@ -101,6 +101,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#cluster-validation" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -123,7 +127,7 @@
                 Jay's Jenkins X Workshop
               </span>
               <span class="md-header-nav__topic">
-                Knative Build
+                Cluster Validation
               </span>
             
           
@@ -346,10 +350,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Other JX Topics
@@ -367,7 +373,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../other/custom-domain/" title="Custom Domain" class="md-nav__link">
+    <a href="../custom-domain/" title="Custom Domain" class="md-nav__link">
       Custom Domain
     </a>
   </li>
@@ -377,11 +383,77 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../other/cluster-validation/" title="Cluster Validation" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Cluster Validation
+      </label>
+    
+    <a href="./" title="Cluster Validation" class="md-nav__link md-nav__link--active">
       Cluster Validation
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#run-compliance-check" title="Run compliance check" class="md-nav__link">
+    Run compliance check
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-compliance-run-status" title="Check Compliance run status" class="md-nav__link">
+    Check Compliance run status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-compliance-run-logs" title="Check Compliance run logs" class="md-nav__link">
+    Check Compliance run logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-compliance-run-results" title="See Compliance run results" class="md-nav__link">
+    See Compliance run results
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup" title="Cleanup" class="md-nav__link">
+    Cleanup
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -391,7 +463,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../other/security/" title="Security" class="md-nav__link">
+    <a href="../security/" title="Security" class="md-nav__link">
       Security
     </a>
   </li>
@@ -403,7 +475,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../other/issue-trackers/" title="Issue Trackers" class="md-nav__link">
+    <a href="../issue-trackers/" title="Issue Trackers" class="md-nav__link">
       Issue Trackers
     </a>
   </li>
@@ -415,7 +487,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../other/alt-git-repo/" title="Alt Git Repo" class="md-nav__link">
+    <a href="../alt-git-repo/" title="Alt Git Repo" class="md-nav__link">
       Alt Git Repo
     </a>
   </li>
@@ -430,12 +502,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       Kubernetes
@@ -453,7 +523,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Basics" class="md-nav__link">
+    <a href="../../k8s/" title="Basics" class="md-nav__link">
       Basics
     </a>
   </li>
@@ -465,7 +535,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/" title="Tools" class="md-nav__link">
+    <a href="../../k8s/tools/" title="Tools" class="md-nav__link">
       Tools
     </a>
   </li>
@@ -477,7 +547,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../helm/" title="Helm" class="md-nav__link">
+    <a href="../../k8s/helm/" title="Helm" class="md-nav__link">
       Helm
     </a>
   </li>
@@ -487,18 +557,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Knative Build" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../k8s/knative-build/" title="Knative Build" class="md-nav__link">
       Knative Build
     </a>
-    
   </li>
 
         
@@ -634,17 +697,106 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#run-compliance-check" title="Run compliance check" class="md-nav__link">
+    Run compliance check
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-compliance-run-status" title="Check Compliance run status" class="md-nav__link">
+    Check Compliance run status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-compliance-run-logs" title="Check Compliance run logs" class="md-nav__link">
+    Check Compliance run logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-compliance-run-results" title="See Compliance run results" class="md-nav__link">
+    See Compliance run results
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup" title="Cleanup" class="md-nav__link">
+    Cleanup
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/edit/master/docs/k8s/knative-build.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/edit/master/docs/other/cluster-validation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Knative Build</h1>
-                
-                
+                <h1 id="cluster-validation">Cluster Validation<a class="headerlink" href="#cluster-validation" title="Permanent link">&para;</a></h1>
+<p>You can <a href="https://www.cloudbees.com/blog/your-cluster-ready-jenkins-x">read this article from Viktor Farcic</a> on how to confirm if your cluster is compliant with Jenkins X's requirements.</p>
+<p>Jenkins X has a binary, called <code>jx</code>, which includes some facilities from the <a href="https://github.com/heptio/sonobuoy">Sonobuoy SDK</a> to provide some validation capabilities.</p>
+<h2 id="run-compliance-check">Run compliance check<a class="headerlink" href="#run-compliance-check" title="Permanent link">&para;</a></h2>
+<p>To run the compliance check, just use the <code>jx</code> command below.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx compliance run
+</pre></div>
+</td></tr></table>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The compliance check will run for about one hour!</p>
+</div>
+<h2 id="check-compliance-run-status">Check Compliance run status<a class="headerlink" href="#check-compliance-run-status" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx compliance status
+</pre></div>
+</td></tr></table>
+
+<h2 id="check-compliance-run-logs">Check Compliance run logs<a class="headerlink" href="#check-compliance-run-logs" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx compliance logs -f
+</pre></div>
+</td></tr></table>
+
+<h2 id="see-compliance-run-results">See Compliance run results<a class="headerlink" href="#see-compliance-run-results" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx compliance results
+</pre></div>
+</td></tr></table>
+
+<h2 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h2>
+<p>Once you're done with the compliance run, you can clean up any resources it created for the run.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx compliance delete
+</pre></div>
+</td></tr></table>
                 
                   
                 
@@ -665,7 +817,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../helm/" title="Helm" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../custom-domain/" title="Custom Domain" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -674,19 +826,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Helm
+                Custom Domain
               </span>
             </div>
           </a>
         
         
-          <a href="../../buildpack/import/" title="Import" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../security/" title="Security" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Import
+                Security
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
