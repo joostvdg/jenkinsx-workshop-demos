@@ -27,3 +27,16 @@ PS1="[\u@\h \W \$(jx prompt)]\$ "
 # Enable the prompt for zsh
 PROMPT='$(jx prompt)'$PROMPT
 ```
+
+## JX Helm
+
+As of this writing, April 2019, Tiller is no longer installed by default.
+This means Helm cannot find it's releases.
+
+To interact with Helm as you're used to, use `jx step helm` instead.
+
+```bash
+jx step helm list
+```
+
+For more details, [read the docs](https://jenkins-x.io/commands/jx_step_helm/).

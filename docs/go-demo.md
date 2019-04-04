@@ -162,8 +162,8 @@ joostvdg/jx-go/master #1                      Running Version: 0.0.1
 ```
 
 ```bash
-JX_HOST=$(kubectl get ing -n jx-staging jx-go -o jsonpath="{.spec.rules[0].host}")
-open "http://$JX_HOST"
+APP_ADDR=$(kubectl get ing -n jx-staging jx-go -o jsonpath="{.spec.rules[0].host}")
+open "http://$APP_ADDR"
 ```
 
 You should see a very fancy (for 1992) page which says `Hello from:  Jenkins X golang http example`.
@@ -219,8 +219,8 @@ jx get activities -f jx-go -w
 Once the activity `Promote: staging` is succeeded, we can confirm our application is updated.
 
 ```bash
-JX_HOST=$(kubectl get ing -n jx-staging jx-go -o jsonpath="{.spec.rules[0].host}")
-curl "http://$JX_HOST"
+APP_ADDR=$(kubectl get ing -n jx-staging jx-go -o jsonpath="{.spec.rules[0].host}")
+curl "http://$APP_ADDR"
 ```
 
 To wrap up, go back to the master branch and pull the changes from the PR.
@@ -268,6 +268,6 @@ Once the promotion is completed successfully, you should be returned to your con
 Let's confirm our application landed in Production!
 
 ```bash
-JX_HOST=$(kubectl get ing -n jx-production jx-go -o jsonpath="{.spec.rules[0].host}")
-curl "http://$JX_HOST"
+APP_ADDR=$(kubectl get ing -n jx-production jx-go -o jsonpath="{.spec.rules[0].host}")
+curl "http://$APP_ADDR"
 ```

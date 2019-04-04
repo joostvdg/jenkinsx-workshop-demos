@@ -14,11 +14,24 @@ nav:
 - Install: install.md
 - Quickstart Demo: go-demo.md
 
-- Tips & Tricks:
+- BuildPack Demo:
+  - Import: buildpack/import.md
+  - BuildPack: buildpack/index.md
+
+- X-Files Demo:
+  - Overview: xfiles/index.md
+  - Mulder: xfiles/mulder.md
+  - Scully: xfiles/scully.md
+  - Integration: xfiles/integration.md
+
+- JX Commands & Tips:
+  - Command Overview: tips/commands.md
   - Tips: tips/index.md
   - GitOps: tips/gitops.md
   - Vault: tips/vault.md
-  - Command Overview: tips/commands.md
+
+- JX Serverless:
+  - Intro: serverless/index.md
 
 - Other JX Topics:
   - Custom Domain: other/custom-domain.md
@@ -31,18 +44,10 @@ nav:
   - Basics: k8s/index.md
   - Tools: k8s/tools.md
   - Helm: k8s/helm.md
+  - Create Cluster: k8s/create-cluster.md
+
+- Kubernetes Advanced:
   - Knative Build: k8s/knative-build.md
-
-- BuildPack Demo:
-  - Import: buildpack/import.md
-  - BuildPack: buildpack/index.md
-
-- X-Files Demo:
-  - Overview: xfiles/index.md
-  - Mulder: xfiles/mulder.md
-  - Scully: xfiles/scully.md
-  - Integration: xfiles/integration.md
-
 
 # Theme
 # Configuration
