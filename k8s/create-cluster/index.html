@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/">
+        <link rel="canonical" href="https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/create-cluster/">
       
       
       
@@ -33,18 +33,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
     
     
       
-        <title>Basics - Jay's Jenkins X Workshop</title>
+        <title>Create Cluster - Jay's Jenkins X Workshop</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.572ca0f0.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
       
       
         
@@ -53,7 +53,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../assets/javascripts/modernizr.8c900955.js"></script>
     
     
       
@@ -62,7 +62,7 @@
         <style>body,input{font-family:"Ubuntu","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#kubernetes-basics" tabindex="1" class="md-skip">
+      <a href="#install-kubernetes-in-public-cloud" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -112,7 +112,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="https://joostvdg.github.io/jenkinsx-workshop-demos" title="Jay's Jenkins X Workshop" class="md-header-nav__button md-logo">
           
-            <img src="../images/logo.svg" width="24" height="24">
+            <img src="../../images/logo.svg" width="24" height="24">
           
         </a>
       </div>
@@ -127,7 +127,7 @@
                 Jay's Jenkins X Workshop
               </span>
               <span class="md-header-nav__topic">
-                Basics
+                Create Cluster
               </span>
             
           
@@ -208,7 +208,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="https://joostvdg.github.io/jenkinsx-workshop-demos" title="Jay's Jenkins X Workshop" class="md-nav__button md-logo">
       
-        <img src="../images/logo.svg" width="48" height="48">
+        <img src="../../images/logo.svg" width="48" height="48">
       
     </a>
     Jay's Jenkins X Workshop
@@ -244,7 +244,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -256,7 +256,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../install/" title="Install" class="md-nav__link">
+    <a href="../../install/" title="Install" class="md-nav__link">
       Install
     </a>
   </li>
@@ -268,7 +268,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../go-demo/" title="Quickstart Demo" class="md-nav__link">
+    <a href="../../go-demo/" title="Quickstart Demo" class="md-nav__link">
       Quickstart Demo
     </a>
   </li>
@@ -299,7 +299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../buildpack/import/" title="Import" class="md-nav__link">
+    <a href="../../buildpack/import/" title="Import" class="md-nav__link">
       Import
     </a>
   </li>
@@ -311,7 +311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../buildpack/" title="BuildPack" class="md-nav__link">
+    <a href="../../buildpack/" title="BuildPack" class="md-nav__link">
       BuildPack
     </a>
   </li>
@@ -347,7 +347,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../xfiles/" title="Overview" class="md-nav__link">
+    <a href="../../xfiles/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -359,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../xfiles/mulder/" title="Mulder" class="md-nav__link">
+    <a href="../../xfiles/mulder/" title="Mulder" class="md-nav__link">
       Mulder
     </a>
   </li>
@@ -371,7 +371,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../xfiles/scully/" title="Scully" class="md-nav__link">
+    <a href="../../xfiles/scully/" title="Scully" class="md-nav__link">
       Scully
     </a>
   </li>
@@ -383,7 +383,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../xfiles/integration/" title="Integration" class="md-nav__link">
+    <a href="../../xfiles/integration/" title="Integration" class="md-nav__link">
       Integration
     </a>
   </li>
@@ -419,7 +419,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tips/commands/" title="Command Overview" class="md-nav__link">
+    <a href="../../tips/commands/" title="Command Overview" class="md-nav__link">
       Command Overview
     </a>
   </li>
@@ -431,7 +431,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tips/" title="Tips" class="md-nav__link">
+    <a href="../../tips/" title="Tips" class="md-nav__link">
       Tips
     </a>
   </li>
@@ -443,7 +443,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tips/gitops/" title="GitOps" class="md-nav__link">
+    <a href="../../tips/gitops/" title="GitOps" class="md-nav__link">
       GitOps
     </a>
   </li>
@@ -455,7 +455,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tips/vault/" title="Vault" class="md-nav__link">
+    <a href="../../tips/vault/" title="Vault" class="md-nav__link">
       Vault
     </a>
   </li>
@@ -491,7 +491,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../serverless/" title="Intro" class="md-nav__link">
+    <a href="../../serverless/" title="Intro" class="md-nav__link">
       Intro
     </a>
   </li>
@@ -527,7 +527,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other/custom-domain/" title="Custom Domain" class="md-nav__link">
+    <a href="../../other/custom-domain/" title="Custom Domain" class="md-nav__link">
       Custom Domain
     </a>
   </li>
@@ -539,7 +539,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other/cluster-validation/" title="Cluster Validation" class="md-nav__link">
+    <a href="../../other/cluster-validation/" title="Cluster Validation" class="md-nav__link">
       Cluster Validation
     </a>
   </li>
@@ -551,7 +551,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other/security/" title="Security" class="md-nav__link">
+    <a href="../../other/security/" title="Security" class="md-nav__link">
       Security
     </a>
   </li>
@@ -563,7 +563,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other/issue-trackers/" title="Issue Trackers" class="md-nav__link">
+    <a href="../../other/issue-trackers/" title="Issue Trackers" class="md-nav__link">
       Issue Trackers
     </a>
   </li>
@@ -575,7 +575,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other/alt-git-repo/" title="Alt Git Repo" class="md-nav__link">
+    <a href="../../other/alt-git-repo/" title="Alt Git Repo" class="md-nav__link">
       Alt Git Repo
     </a>
   </li>
@@ -611,6 +611,42 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../" title="Basics" class="md-nav__link">
+      Basics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../tools/" title="Tools" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../helm/" title="Helm" class="md-nav__link">
+      Helm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -622,11 +658,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Basics
+        Create Cluster
       </label>
     
-    <a href="./" title="Basics" class="md-nav__link md-nav__link--active">
-      Basics
+    <a href="./" title="Create Cluster" class="md-nav__link md-nav__link--active">
+      Create Cluster
     </a>
     
       
@@ -640,36 +676,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pod" title="Pod" class="md-nav__link">
-    Pod
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" title="Deployment" class="md-nav__link">
-    Deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#service" title="Service" class="md-nav__link">
-    Service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ingress" title="Ingress" class="md-nav__link">
-    Ingress
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#volume" title="Volume" class="md-nav__link">
-    Volume
+  <a href="#gke" title="GKE" class="md-nav__link">
+    GKE
   </a>
   
 </li>
@@ -682,42 +690,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="tools/" title="Tools" class="md-nav__link">
-      Tools
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="helm/" title="Helm" class="md-nav__link">
-      Helm
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="create-cluster/" title="Create Cluster" class="md-nav__link">
-      Create Cluster
-    </a>
   </li>
 
         
@@ -751,7 +723,7 @@
 
 
   <li class="md-nav__item">
-    <a href="knative-build/" title="Knative Build" class="md-nav__link">
+    <a href="../knative-build/" title="Knative Build" class="md-nav__link">
       Knative Build
     </a>
   </li>
@@ -783,36 +755,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pod" title="Pod" class="md-nav__link">
-    Pod
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" title="Deployment" class="md-nav__link">
-    Deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#service" title="Service" class="md-nav__link">
-    Service
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ingress" title="Ingress" class="md-nav__link">
-    Ingress
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#volume" title="Volume" class="md-nav__link">
-    Volume
+  <a href="#gke" title="GKE" class="md-nav__link">
+    GKE
   </a>
   
 </li>
@@ -833,15 +777,60 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/edit/master/docs/k8s/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/edit/master/docs/k8s/create-cluster.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="kubernetes-basics">Kubernetes Basics<a class="headerlink" href="#kubernetes-basics" title="Permanent link">&para;</a></h1>
-<h2 id="pod">Pod<a class="headerlink" href="#pod" title="Permanent link">&para;</a></h2>
-<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
-<h2 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h2>
-<h2 id="ingress">Ingress<a class="headerlink" href="#ingress" title="Permanent link">&para;</a></h2>
-<h2 id="volume">Volume<a class="headerlink" href="#volume" title="Permanent link">&para;</a></h2>
+                <h1 id="install-kubernetes-in-public-cloud">Install Kubernetes in Public Cloud<a class="headerlink" href="#install-kubernetes-in-public-cloud" title="Permanent link">&para;</a></h1>
+<h2 id="gke">GKE<a class="headerlink" href="#gke" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">CLUSTER_NAME</span><span class="o">=[</span>...<span class="o">]</span> <span class="c1"># Change to a random name (e.g., your user)</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gcloud auth login
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gcloud container clusters <span class="se">\</span>
+    create <span class="nv">$CLUSTER_NAME</span> <span class="se">\</span>
+    --region us-east1 <span class="se">\</span>
+    --machine-type n1-standard-1 <span class="se">\</span>
+    --enable-autoscaling <span class="se">\</span>
+    --num-nodes <span class="m">1</span> <span class="se">\</span>
+    --max-nodes <span class="m">3</span> <span class="se">\</span>
+    --min-nodes <span class="m">1</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create clusterrolebinding <span class="se">\</span>
+    cluster-admin-binding <span class="se">\</span>
+    --clusterrole cluster-admin <span class="se">\</span>
+    --user <span class="k">$(</span>gcloud config get-value account<span class="k">)</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get nodes -o wide
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gcloud container clusters <span class="se">\</span>
+    delete <span class="nv">$CLUSTER_NAME</span> <span class="se">\</span>
+    --region us-east1 <span class="se">\</span>
+    --quiet
+</pre></div>
+</td></tr></table>
                 
                   
                 
@@ -862,7 +851,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../other/alt-git-repo/" title="Alt Git Repo" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../helm/" title="Helm" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -871,19 +860,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Alt Git Repo
+                Helm
               </span>
             </div>
           </a>
         
         
-          <a href="tools/" title="Tools" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../knative-build/" title="Knative Build" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Tools
+                Knative Build
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -911,7 +900,7 @@
       
         
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/joostvdg" class="md-footer-social__link fa fa-github"></a>
     
@@ -928,9 +917,9 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../assets/javascripts/application.b41f3d20.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
     
