@@ -1273,14 +1273,30 @@ With a default value, that derives its value from the Helm release name.</p>
 <p>This makes the default install from Helm work and allows users of our Helm chart, to use a different Redis instance.</p>
 <p>To do so, we have to add the environment variable in <code>charts/jx-micronaut-seed/templates/deployment.yaml</code>.</p>
 <p>Add the below snippet to the <code>spec.template.spec.containers[0]</code> section between <code>imagePullPolicy: {{ .Values.image.pullPolicy }}</code> and <code>ports:</code>.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+<div class="superfences-tabs">
+<input name="__tabs_6" type="radio" id="__tab_6_0" checked="checked" />
+<label for="__tab_6_0">Raw YAML</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">env</span><span class="p p-Indicator">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">REDIS_HOST</span>
-    <span class="l l-Scalar l-Scalar-Plain">value</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">template &quot;fullname&quot; .</span> <span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-redis-master</span>
+      <span class="l l-Scalar l-Scalar-Plain">value</span><span class="p p-Indicator">:</span> <span class="p p-Indicator">{{</span> <span class="nv">template &quot;fullname&quot; .</span> <span class="p p-Indicator">}}</span><span class="l l-Scalar l-Scalar-Plain">-redis-master</span>
 </pre></div>
-</td></tr></table>
-
+</td></tr></table></div>
+<input name="__tabs_6" type="radio" id="__tab_6_1" />
+<label for="__tab_6_1">Command Line magic</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat charts/jx-micronaut-seed/templates/deployment.yaml <span class="p">|</span> sed -e <span class="se">\</span>
+    <span class="s1">&#39;s@env:@env:\</span>
+<span class="s1">        - name: REDIS_HOST\</span>
+<span class="s1">          value: {{ template &quot;fullname&quot; . }}-redis-master@g&#39;</span> <span class="se">\</span>
+    <span class="p">|</span> tee charts/jx-micronaut-seed/templates/deployment.yaml
+</pre></div>
+</td></tr></table></div>
+</div>
 <p>The end result should look like this:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
@@ -1309,15 +1325,15 @@ The Redis chart by default generates a unique password on startup.</p>
 Let's configure our Redis chart to not use a password for now.</p>
 <p>Add the below snippet at the bottom of <code>charts/jx-micronaut-seed/values.yaml</code> or use the command line magic for automation.</p>
 <div class="superfences-tabs">
-<input name="__tabs_6" type="radio" id="__tab_6_0" checked="checked" />
-<label for="__tab_6_0">Raw YAML</label>
+<input name="__tabs_7" type="radio" id="__tab_7_0" checked="checked" />
+<label for="__tab_7_0">Raw YAML</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">jx-micronaut-seed-redis</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">usePassword</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
 </pre></div>
 </td></tr></table></div>
-<input name="__tabs_6" type="radio" id="__tab_6_1" />
-<label for="__tab_6_1">Command Line magic</label>
+<input name="__tabs_7" type="radio" id="__tab_7_1" />
+<label for="__tab_7_1">Command Line magic</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;jx-micronaut-seed-redis:</span>
@@ -1357,15 +1373,15 @@ jx-jx-micronaut-seed-75ffd4fbc4-66sgr   <span class="m">1</span>/1     Running  
 
 <p>Let's see if we can talk to it.</p>
 <div class="superfences-tabs">
-<input name="__tabs_7" type="radio" id="__tab_7_0" checked="checked" />
-<label for="__tab_7_0">curl</label>
+<input name="__tabs_8" type="radio" id="__tab_8_0" checked="checked" />
+<label for="__tab_8_0">curl</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">APP_ADDR</span><span class="o">=</span><span class="k">$(</span>kubectl get ing -n jx-staging jx-micronaut-seed -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.rules[0].host}&quot;</span><span class="k">)</span>
 curl <span class="s2">&quot;http://</span><span class="nv">$APP_ADDR</span><span class="s2">/health&quot;</span>
 </pre></div>
 </td></tr></table></div>
-<input name="__tabs_7" type="radio" id="__tab_7_1" />
-<label for="__tab_7_1">httpie</label>
+<input name="__tabs_8" type="radio" id="__tab_8_1" />
+<label for="__tab_8_1">httpie</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">APP_ADDR</span><span class="o">=</span><span class="k">$(</span>kubectl get ing -n jx-staging jx-micronaut-seed -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.rules[0].host}&quot;</span><span class="k">)</span>
 http <span class="s2">&quot;</span><span class="nv">$APP_ADDR</span><span class="s2">/health&quot;</span>
@@ -1384,8 +1400,8 @@ http <span class="s2">&quot;</span><span class="nv">$APP_ADDR</span><span class=
 <p>We've done it!</p>
 <p>Now lets use the Redis database in a wholefully inappropriate way.</p>
 <div class="superfences-tabs">
-<input name="__tabs_8" type="radio" id="__tab_8_0" checked="checked" />
-<label for="__tab_8_0">curl</label>
+<input name="__tabs_9" type="radio" id="__tab_9_0" checked="checked" />
+<label for="__tab_9_0">curl</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -1397,8 +1413,8 @@ curl --header <span class="s2">&quot;Content-Type: application/json&quot;</span>
 curl <span class="s2">&quot;http://</span><span class="nv">$APP_ADDR</span><span class="s2">/message&quot;</span>
 </pre></div>
 </td></tr></table></div>
-<input name="__tabs_8" type="radio" id="__tab_8_1" />
-<label for="__tab_8_1">httpie</label>
+<input name="__tabs_9" type="radio" id="__tab_9_1" />
+<label for="__tab_9_1">httpie</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">APP_ADDR</span><span class="o">=</span><span class="k">$(</span>kubectl get ing -n jx-staging jx-micronaut-seed -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.rules[0].host}&quot;</span><span class="k">)</span>
@@ -1408,6 +1424,11 @@ http <span class="si">${</span><span class="nv">APP_ADDR</span><span class="si">
 </td></tr></table></div>
 </div>
 <p>Now, in order to avoid having to this kind of ritual for every Micronaut based application, we should probably make a better starting point. Let's move on to create a <a href="/docs/buildpack/">BuildPack</a></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For more information on Jenkins X's <code>jx import</code> command,
+<a href="https://jenkins-x.io/developing/import/">please consult the documentation at jenkins-x.io</a></p>
+</div>
                 
                   
                 
