@@ -277,10 +277,18 @@ To do so, we have to add the environment variable in `charts/jx-micronaut-seed/t
 
 Add the below snippet to the `spec.template.spec.containers[0]` section between `imagePullPolicy: {{ .Values.image.pullPolicy }}` and `ports:`.
 
-```yaml
+```yaml tab="Raw YAML"
 env:
     - name: REDIS_HOST
-    value: {{ template "fullname" . }}-redis-master
+      value: {{ template "fullname" . }}-redis-master
+```
+
+```bash tab="Command Line magic"
+cat charts/jx-micronaut-seed/templates/deployment.yaml | sed -e \
+    's@env:@env:\
+        - name: REDIS_HOST\
+          value: {{ template "fullname" . }}-redis-master@g' \
+    | tee charts/jx-micronaut-seed/templates/deployment.yaml
 ```
 
 The end result should look like this:
@@ -385,3 +393,7 @@ http ${APP_ADDR}/message
 ```
 
 Now, in order to avoid having to this kind of ritual for every Micronaut based application, we should probably make a better starting point. Let's move on to create a [BuildPack](/docs/buildpack/)
+
+!!! Info
+    For more information on Jenkins X's `jx import` command,
+    [please consult the documentation at jenkins-x.io](https://jenkins-x.io/developing/import/)
