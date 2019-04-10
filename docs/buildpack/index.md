@@ -253,7 +253,8 @@ ls -1 \
 
 !!! Info
     For more information on how to version your application,
-    please consult [jx-release-version](https://github.com/jenkins-x/jx-release-version).
+    please consult [Jenkins X's jx-release-version tool](https://github.com/jenkins-x/jx-release-version).
+    Or read [CloudBees' blog on automatic versioning](https://www.cloudbees.com/blog/automatically-versioning-your-application-jenkins-x).
 
 ### Confirm it works
 
