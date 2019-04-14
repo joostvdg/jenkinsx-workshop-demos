@@ -726,6 +726,33 @@
     ConfigMap
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-from-files" title="Create from files" class="md-nav__link">
+    Create from files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-from-literals" title="Create from literals" class="md-nav__link">
+    Create from literals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-from-environment-files" title="Create from environment files" class="md-nav__link">
+    Create from environment files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -733,12 +760,80 @@
     Secrets
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generic-secrets" title="Generic secrets" class="md-nav__link">
+    Generic secrets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup" title="Cleanup" class="md-nav__link">
+    Cleanup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#namespaces" title="Namespaces" class="md-nav__link">
     Namespaces
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-initial-release" title="Create initial release" class="md-nav__link">
+    Create initial release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-existing-namespaces" title="Retrieve existing Namespaces" class="md-nav__link">
+    Retrieve existing Namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-existing-namespaces" title="Explore existing namespaces" class="md-nav__link">
+    Explore existing namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-new-namespace" title="Create new namespace" class="md-nav__link">
+    Create new namespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-default-namespace" title="Change default namespace" class="md-nav__link">
+    Change default namespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-to-a-new-namespace" title="Deploy to a new namespace" class="md-nav__link">
+    Deploy to a new namespace
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -810,6 +905,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#annotations" title="Annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crds" title="CRD's" class="md-nav__link">
+    CRD's
+  </a>
+  
+</li>
+      
       
       
       
@@ -841,8 +950,278 @@
 <li>Deploying Stateful Applications At Scale</li>
 </ul>
 <h2 id="configmap">ConfigMap<a class="headerlink" href="#configmap" title="Permanent link">&para;</a></h2>
+<h3 id="create-from-files">Create from files<a class="headerlink" href="#create-from-files" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create cm my-config --from-file<span class="o">=</span>cm/prometheus-conf.yml <span class="se">\</span>
+    --from-file<span class="o">=</span>cm/prometheus.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat cm/alpine.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create -f cm/alpine.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl <span class="nb">exec</span> -it alpine -- ls /etc/config
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl <span class="nb">exec</span> -it alpine -- cat /etc/config/prometheus-conf.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete -f cm/alpine.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete cm my-config
+</pre></div>
+</td></tr></table>
+
+<h3 id="create-from-literals">Create from literals<a class="headerlink" href="#create-from-literals" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create cm my-config <span class="se">\</span>
+    --from-literal<span class="o">=</span><span class="nv">something</span><span class="o">=</span><span class="k">else</span> --from-literal<span class="o">=</span><span class="nv">weather</span><span class="o">=</span>sunny
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create -f cm/alpine.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl <span class="nb">exec</span> -it alpine -- ls /etc/config
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl <span class="nb">exec</span> -it alpine -- cat /etc/config/something
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete -f cm/alpine.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete cm my-config
+</pre></div>
+</td></tr></table>
+
+<h3 id="create-from-environment-files">Create from environment files<a class="headerlink" href="#create-from-environment-files" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat cm/my-env-file.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create cm my-config --from-env-file<span class="o">=</span>cm/my-env-file.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get cm my-config -o yaml
+</pre></div>
+</td></tr></table>
+
 <h2 id="secrets">Secrets<a class="headerlink" href="#secrets" title="Permanent link">&para;</a></h2>
+<h3 id="generic-secrets">Generic secrets<a class="headerlink" href="#generic-secrets" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create secret generic my-creds <span class="se">\</span>
+    --from-literal<span class="o">=</span><span class="nv">username</span><span class="o">=</span>jdoe --from-literal<span class="o">=</span><span class="nv">password</span><span class="o">=</span>incognito
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get secrets
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get secret my-creds -o json
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get secret my-creds -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.username}&quot;</span> <span class="se">\</span>
+    <span class="p">|</span> base64 --decode
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get secret my-creds -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.data.password}&quot;</span> <span class="se">\</span>
+    <span class="p">|</span> base64 --decode
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat secret/jenkins.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl apply -f secret/jenkins.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl rollout status deploy jenkins
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">POD_NAME</span><span class="o">=</span><span class="k">$(</span>kubectl get pods -l <span class="nv">service</span><span class="o">=</span>jenkins,type<span class="o">=</span>master <span class="se">\</span>
+    -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[*].metadata.name}&quot;</span><span class="k">)</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl <span class="nb">exec</span> -it <span class="nv">$POD_NAME</span> -- ls /etc/secrets
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl <span class="nb">exec</span> -it <span class="nv">$POD_NAME</span> -- cat /etc/secrets/jenkins-user
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">IP</span><span class="o">=</span><span class="k">$(</span>minikube ip<span class="k">)</span> <span class="c1"># If minikube</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>open <span class="s2">&quot;http://</span><span class="nv">$IP</span><span class="s2">/jenkins&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete -f secret/jenkins.yml
+
+kubectl delete secret my-creds
+</pre></div>
+</td></tr></table>
+
 <h2 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">&para;</a></h2>
+<h3 id="create-initial-release">Create initial release<a class="headerlink" href="#create-initial-release" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat ns/go-demo-2.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">IMG</span><span class="o">=</span>vfarcic/go-demo-2
+<span class="nv">TAG</span><span class="o">=</span><span class="m">1</span>.0
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat ns/go-demo-2.yml <span class="p">|</span> sed -e <span class="s2">&quot;s@image: </span><span class="nv">$IMG</span><span class="s2">@image: </span><span class="nv">$IMG</span><span class="s2">:</span><span class="nv">$TAG</span><span class="s2">@g&quot;</span> <span class="se">\</span>
+    <span class="p">|</span> kubectl create -f -
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl rollout status deploy go-demo-2-api
+</pre></div>
+</td></tr></table>
+
+<h3 id="retrieve-existing-namespaces">Retrieve existing Namespaces<a class="headerlink" href="#retrieve-existing-namespaces" title="Permanent link">&para;</a></h3>
+<div class="superfences-tabs">
+<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
+<label for="__tab_1_0">Shorthand way</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get ns
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_1" type="radio" id="__tab_1_1" />
+<label for="__tab_1_1">Verbose way</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get namespaces
+</pre></div>
+</td></tr></table></div>
+</div>
+<h3 id="explore-existing-namespaces">Explore existing namespaces<a class="headerlink" href="#explore-existing-namespaces" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n kube-public get all
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n kube-system get all
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n default get all
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get all
+</pre></div>
+</td></tr></table>
+
+<h3 id="create-new-namespace">Create new namespace<a class="headerlink" href="#create-new-namespace" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create ns testing
+
+kubectl get ns
+</pre></div>
+</td></tr></table>
+
+<h3 id="change-default-namespace">Change default namespace<a class="headerlink" href="#change-default-namespace" title="Permanent link">&para;</a></h3>
+<div class="superfences-tabs">
+<input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
+<label for="__tab_2_0">GKE</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">DEFAULT_CONTEXT</span><span class="o">=</span><span class="k">$(</span>kubectl config current-context<span class="k">)</span>
+kubectl config set-context testing --namespace testing <span class="se">\</span>
+    --cluster <span class="nv">$DEFAULT_CONTEXT</span> --user <span class="nv">$DEFAULT_CONTEXT</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">JX</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx ns testing
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_2" type="radio" id="__tab_2_2" />
+<label for="__tab_2_2">Kubectx</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubens testing
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_2" type="radio" id="__tab_2_3" />
+<label for="__tab_2_3">EKS</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl config set-context testing --namespace testing <span class="se">\</span>
+    --cluster devops24.<span class="nv">$AWS_DEFAULT_REGION</span>.eksctl.io <span class="se">\</span>
+    --user iam-root-account@devops24.<span class="nv">$AWS_DEFAULT_REGION</span>.eksctl.io
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_2" type="radio" id="__tab_2_4" />
+<label for="__tab_2_4">Minikube</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl config set-context testing --namespace testing <span class="se">\</span>
+    --cluster minikube --user minikube
+</pre></div>
+</td></tr></table></div>
+</div>
+<h3 id="deploy-to-a-new-namespace">Deploy to a new namespace<a class="headerlink" href="#deploy-to-a-new-namespace" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl config view
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl config use-context testing
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get all
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">TAG</span><span class="o">=</span><span class="m">2</span>.0
+<span class="nv">DOM</span><span class="o">=</span>go-demo-2.com
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat ns/go-demo-2.yml <span class="p">|</span> sed -e <span class="s2">&quot;s@image: </span><span class="nv">$IMG</span><span class="s2">@image: </span><span class="nv">$IMG</span><span class="s2">:</span><span class="nv">$TAG</span><span class="s2">@g&quot;</span> <span class="se">\</span>
+    <span class="p">|</span> sed -e <span class="s2">&quot;s@host: </span><span class="nv">$DOM</span><span class="s2">@host: </span><span class="nv">$TAG</span><span class="s2">\.</span><span class="nv">$DOM</span><span class="s2">@g&quot;</span> <span class="se">\</span>
+    <span class="p">|</span> kubectl create -f -
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl rollout status deploy go-demo-2-api
+</pre></div>
+</td></tr></table>
+
 <h2 id="service-accounts">Service Accounts<a class="headerlink" href="#service-accounts" title="Permanent link">&para;</a></h2>
 <h2 id="resource-limits-requests">Resource limits &amp; requests<a class="headerlink" href="#resource-limits-requests" title="Permanent link">&para;</a></h2>
 <h2 id="volumes">Volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h2>
@@ -879,15 +1258,15 @@ kubectl -n jenkins get pv
 <li>look at PV</li>
 </ul>
 <div class="superfences-tabs">
-<input name="__tabs_1" type="radio" id="__tab_1_0" checked="checked" />
-<label for="__tab_1_0">GKE</label>
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">GKE</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">JENKINS_ADDR</span><span class="o">=</span><span class="k">$(</span>kubectl -n jenkins get ing jenkins <span class="se">\</span>
     -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.status.loadBalancer.ingress[0].ip}&quot;</span><span class="k">)</span>
 </pre></div>
 </td></tr></table></div>
-<input name="__tabs_1" type="radio" id="__tab_1_1" />
-<label for="__tab_1_1">EKS</label>
+<input name="__tabs_3" type="radio" id="__tab_3_1" />
+<label for="__tab_3_1">EKS</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">JENKINS_ADDR</span><span class="o">=</span><span class="k">$(</span>kubectl -n jenkins get ing jenkins <span class="se">\</span>
     -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.status.loadBalancer.ingress[0].hostname}&quot;</span><span class="k">)</span>
@@ -972,6 +1351,9 @@ kubectl -n go-demo-3 get pods
 kubectl get pv
 </pre></div>
 </td></tr></table>
+
+<h2 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h2>
+<h2 id="crds">CRD's<a class="headerlink" href="#crds" title="Permanent link">&para;</a></h2>
                 
                   
                 
