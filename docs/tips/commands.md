@@ -40,3 +40,11 @@ jx step helm list
 ```
 
 For more details, [read the docs](https://jenkins-x.io/commands/jx_step_helm/).
+
+## Single Issue commands
+
+### Get URLS
+
+```bash
+jx get urls
+```
