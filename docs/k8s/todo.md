@@ -23,6 +23,9 @@
     * homogenous observability
     * homogenous extension (think istio, flagger)
 * rollback vs. rollforward
+* namespaces
+    * purpose
+    * impact on DNS
 * Infrastructure As Code
 * Declarative instead of Imperative
 * Self-healing

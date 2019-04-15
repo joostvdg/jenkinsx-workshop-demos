@@ -212,18 +212,18 @@ kubectl get ns
 
 ### Change default namespace
 
-```bash tab="GKE"
-DEFAULT_CONTEXT=$(kubectl config current-context)
-kubectl config set-context testing --namespace testing \
-    --cluster $DEFAULT_CONTEXT --user $DEFAULT_CONTEXT
-```
-
 ```bash tab="JX"
 jx ns testing
 ```
 
 ```bash tab="Kubectx"
 kubens testing
+```
+
+```bash tab="GKE"
+DEFAULT_CONTEXT=$(kubectl config current-context)
+kubectl config set-context testing --namespace testing \
+    --cluster $DEFAULT_CONTEXT --user $DEFAULT_CONTEXT
 ```
 
 ```bash tab="EKS"
@@ -264,6 +264,96 @@ cat ns/go-demo-2.yml | sed -e "s@image: $IMG@image: $IMG:$TAG@g" \
 
 ```bash
 kubectl rollout status deploy go-demo-2-api
+```
+
+```bash
+curl -H "Host: go-demo-2.com" "http://$IP/demo/hello"
+```
+
+```bash
+curl -H "Host: 2.0.go-demo-2.com" "http://$IP/demo/hello"
+```
+
+### Communicate accross namespaces
+
+Make sure we use the `default` namespace again.
+
+```bash tab="JX"
+jx ns default
+```
+
+```bash tab="Kubectx"
+kubens default
+```
+
+```bash tab="GKE"
+kubectl config use-context $DEFAULT_CONTEXT
+```
+
+```bash tab="EKS"
+kubectl config use-context iam-root-account@devops24.$AWS_DEFAULT_REGION.eksctl.io
+```
+
+```bash tab="Minikube"
+kubectl config use-context minikube
+```
+
+Now we run a new container, and make sure it has curl.
+
+```bash
+kubectl run test --image=alpine --restart=Never sleep 10000
+```
+
+```bash
+kubectl get pod test
+
+kubectl exec -it test -- apk add -U curl
+```
+
+Now, lets **exec** into the container (`kubectl exec`) and use curl to test the services' DNS.
+
+```bash tab="Service in Default ns"
+kubectl exec -it test -- curl "http://go-demo-2-api:8080/demo/hello"
+```
+
+
+```bash tab="Service in Testing ns"
+kubectl exec -it test \
+    -- curl "http://go-demo-2-api.testing:8080/demo/hello"
+```
+
+### Delete a Namespace
+
+```bash
+kubectl delete ns testing
+```
+
+```bash
+kubectl -n testing get all
+```
+
+```bash
+kubectl get all
+```
+
+```bash
+curl -H "Host: go-demo-2.com" "http://$IP/demo/hello"
+```
+
+```bash
+kubectl set image deployment/go-demo-2-api \
+    api=vfarcic/go-demo-2:2.0 --record
+```
+
+```bash
+curl -H "Host: go-demo-2.com" "http://$IP/demo/hello"
+```
+
+### Cleanup
+
+```bash
+kubectl delete -f ns/go-demo-2.yml
+kubectl delete pod test
 ```
 
 ## Service Accounts
