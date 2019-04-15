@@ -101,6 +101,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/part2/</loc>
+     <lastmod>2019-04-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/tools/</loc>
      <lastmod>2019-04-14</lastmod>
      <changefreq>daily</changefreq>

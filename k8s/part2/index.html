@@ -38,7 +38,7 @@
     
     
       
-        <title>Kubernetes Intermediate - Jay's Jenkins X Workshop</title>
+        <title>Basics II - Jay's Jenkins X Workshop</title>
       
     
     
@@ -127,7 +127,7 @@
                 Jay's Jenkins X Workshop
               </span>
               <span class="md-header-nav__topic">
-                Kubernetes Intermediate
+                Basics II
               </span>
             
           
@@ -590,10 +590,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
     
     <label class="md-nav__link" for="nav-9">
       Kubernetes
@@ -611,9 +613,278 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Basics" class="md-nav__link">
-      Basics
+    <a href="../" title="Basics I" class="md-nav__link">
+      Basics I
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Basics II
+      </label>
+    
+    <a href="./" title="Basics II" class="md-nav__link md-nav__link--active">
+      Basics II
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#points-to-cover" title="Points to cover" class="md-nav__link">
+    Points to cover
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configmap" title="ConfigMap" class="md-nav__link">
+    ConfigMap
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-from-files" title="Create from files" class="md-nav__link">
+    Create from files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-from-literals" title="Create from literals" class="md-nav__link">
+    Create from literals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-from-environment-files" title="Create from environment files" class="md-nav__link">
+    Create from environment files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secrets" title="Secrets" class="md-nav__link">
+    Secrets
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generic-secrets" title="Generic secrets" class="md-nav__link">
+    Generic secrets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup" title="Cleanup" class="md-nav__link">
+    Cleanup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespaces" title="Namespaces" class="md-nav__link">
+    Namespaces
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-initial-release" title="Create initial release" class="md-nav__link">
+    Create initial release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-existing-namespaces" title="Retrieve existing Namespaces" class="md-nav__link">
+    Retrieve existing Namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explore-existing-namespaces" title="Explore existing namespaces" class="md-nav__link">
+    Explore existing namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-new-namespace" title="Create new namespace" class="md-nav__link">
+    Create new namespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-default-namespace" title="Change default namespace" class="md-nav__link">
+    Change default namespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-to-a-new-namespace" title="Deploy to a new namespace" class="md-nav__link">
+    Deploy to a new namespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communicate-accross-namespaces" title="Communicate accross namespaces" class="md-nav__link">
+    Communicate accross namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-namespace" title="Delete a Namespace" class="md-nav__link">
+    Delete a Namespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup_1" title="Cleanup" class="md-nav__link">
+    Cleanup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-accounts" title="Service Accounts" class="md-nav__link">
+    Service Accounts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-limits-requests" title="Resource limits &amp; requests" class="md-nav__link">
+    Resource limits &amp; requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volumes" title="Volumes" class="md-nav__link">
+    Volumes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#volume" title="Volume" class="md-nav__link">
+    Volume
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistent-volume" title="Persistent Volume" class="md-nav__link">
+    Persistent Volume
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulset" title="StatefulSet" class="md-nav__link">
+    StatefulSet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optional" title="Optional" class="md-nav__link">
+    Optional
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-sts-instead" title="Use STS instead" class="md-nav__link">
+    Use STS instead
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotations" title="Annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crds" title="CRD's" class="md-nav__link">
+    CRD's
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -828,6 +1099,27 @@
           <li class="md-nav__item">
   <a href="#deploy-to-a-new-namespace" title="Deploy to a new namespace" class="md-nav__link">
     Deploy to a new namespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communicate-accross-namespaces" title="Communicate accross namespaces" class="md-nav__link">
+    Communicate accross namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-namespace" title="Delete a Namespace" class="md-nav__link">
+    Delete a Namespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup_1" title="Cleanup" class="md-nav__link">
+    Cleanup
   </a>
   
 </li>
@@ -1156,22 +1448,22 @@ kubectl get ns
 <h3 id="change-default-namespace">Change default namespace<a class="headerlink" href="#change-default-namespace" title="Permanent link">&para;</a></h3>
 <div class="superfences-tabs">
 <input name="__tabs_2" type="radio" id="__tab_2_0" checked="checked" />
-<label for="__tab_2_0">GKE</label>
+<label for="__tab_2_0">JX</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx ns testing
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_2" type="radio" id="__tab_2_1" />
+<label for="__tab_2_1">Kubectx</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubens testing
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_2" type="radio" id="__tab_2_2" />
+<label for="__tab_2_2">GKE</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">DEFAULT_CONTEXT</span><span class="o">=</span><span class="k">$(</span>kubectl config current-context<span class="k">)</span>
 kubectl config set-context testing --namespace testing <span class="se">\</span>
     --cluster <span class="nv">$DEFAULT_CONTEXT</span> --user <span class="nv">$DEFAULT_CONTEXT</span>
-</pre></div>
-</td></tr></table></div>
-<input name="__tabs_2" type="radio" id="__tab_2_1" />
-<label for="__tab_2_1">JX</label>
-<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx ns testing
-</pre></div>
-</td></tr></table></div>
-<input name="__tabs_2" type="radio" id="__tab_2_2" />
-<label for="__tab_2_2">Kubectx</label>
-<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubens testing
 </pre></div>
 </td></tr></table></div>
 <input name="__tabs_2" type="radio" id="__tab_2_3" />
@@ -1222,6 +1514,105 @@ kubectl config set-context testing --namespace testing <span class="se">\</span>
 </pre></div>
 </td></tr></table>
 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl -H <span class="s2">&quot;Host: go-demo-2.com&quot;</span> <span class="s2">&quot;http://</span><span class="nv">$IP</span><span class="s2">/demo/hello&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl -H <span class="s2">&quot;Host: 2.0.go-demo-2.com&quot;</span> <span class="s2">&quot;http://</span><span class="nv">$IP</span><span class="s2">/demo/hello&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="communicate-accross-namespaces">Communicate accross namespaces<a class="headerlink" href="#communicate-accross-namespaces" title="Permanent link">&para;</a></h3>
+<p>Make sure we use the <code>default</code> namespace again.</p>
+<div class="superfences-tabs">
+<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
+<label for="__tab_3_0">JX</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx ns default
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_3" type="radio" id="__tab_3_1" />
+<label for="__tab_3_1">Kubectx</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubens default
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_3" type="radio" id="__tab_3_2" />
+<label for="__tab_3_2">GKE</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl config use-context <span class="nv">$DEFAULT_CONTEXT</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_3" type="radio" id="__tab_3_3" />
+<label for="__tab_3_3">EKS</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl config use-context iam-root-account@devops24.<span class="nv">$AWS_DEFAULT_REGION</span>.eksctl.io
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_3" type="radio" id="__tab_3_4" />
+<label for="__tab_3_4">Minikube</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl config use-context minikube
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Now we run a new container, and make sure it has curl.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl run <span class="nb">test</span> --image<span class="o">=</span>alpine --restart<span class="o">=</span>Never sleep <span class="m">10000</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get pod <span class="nb">test</span>
+
+kubectl <span class="nb">exec</span> -it <span class="nb">test</span> -- apk add -U curl
+</pre></div>
+</td></tr></table>
+
+<p>Now, lets <strong>exec</strong> into the container (<code>kubectl exec</code>) and use curl to test the services' DNS.</p>
+<div class="superfences-tabs">
+<input name="__tabs_4" type="radio" id="__tab_4_0" checked="checked" />
+<label for="__tab_4_0">Service in Default ns</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl <span class="nb">exec</span> -it <span class="nb">test</span> -- curl <span class="s2">&quot;http://go-demo-2-api:8080/demo/hello&quot;</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_4" type="radio" id="__tab_4_1" />
+<label for="__tab_4_1">Service in Testing ns</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl <span class="nb">exec</span> -it <span class="nb">test</span> <span class="se">\</span>
+    -- curl <span class="s2">&quot;http://go-demo-2-api.testing:8080/demo/hello&quot;</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<h3 id="delete-a-namespace">Delete a Namespace<a class="headerlink" href="#delete-a-namespace" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete ns testing
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n testing get all
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get all
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl -H <span class="s2">&quot;Host: go-demo-2.com&quot;</span> <span class="s2">&quot;http://</span><span class="nv">$IP</span><span class="s2">/demo/hello&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl <span class="nb">set</span> image deployment/go-demo-2-api <span class="se">\</span>
+    <span class="nv">api</span><span class="o">=</span>vfarcic/go-demo-2:2.0 --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl -H <span class="s2">&quot;Host: go-demo-2.com&quot;</span> <span class="s2">&quot;http://</span><span class="nv">$IP</span><span class="s2">/demo/hello&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="cleanup_1">Cleanup<a class="headerlink" href="#cleanup_1" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete -f ns/go-demo-2.yml
+kubectl delete pod <span class="nb">test</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="service-accounts">Service Accounts<a class="headerlink" href="#service-accounts" title="Permanent link">&para;</a></h2>
 <h2 id="resource-limits-requests">Resource limits &amp; requests<a class="headerlink" href="#resource-limits-requests" title="Permanent link">&para;</a></h2>
 <h2 id="volumes">Volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h2>
@@ -1258,15 +1649,15 @@ kubectl -n jenkins get pv
 <li>look at PV</li>
 </ul>
 <div class="superfences-tabs">
-<input name="__tabs_3" type="radio" id="__tab_3_0" checked="checked" />
-<label for="__tab_3_0">GKE</label>
+<input name="__tabs_5" type="radio" id="__tab_5_0" checked="checked" />
+<label for="__tab_5_0">GKE</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">JENKINS_ADDR</span><span class="o">=</span><span class="k">$(</span>kubectl -n jenkins get ing jenkins <span class="se">\</span>
     -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.status.loadBalancer.ingress[0].ip}&quot;</span><span class="k">)</span>
 </pre></div>
 </td></tr></table></div>
-<input name="__tabs_3" type="radio" id="__tab_3_1" />
-<label for="__tab_3_1">EKS</label>
+<input name="__tabs_5" type="radio" id="__tab_5_1" />
+<label for="__tab_5_1">EKS</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">JENKINS_ADDR</span><span class="o">=</span><span class="k">$(</span>kubectl -n jenkins get ing jenkins <span class="se">\</span>
     -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.status.loadBalancer.ingress[0].hostname}&quot;</span><span class="k">)</span>
@@ -1370,6 +1761,41 @@ kubectl get pv
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../" title="Basics I" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Basics I
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../tools/" title="Tools" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Tools
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
