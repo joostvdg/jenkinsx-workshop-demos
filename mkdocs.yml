@@ -43,6 +43,7 @@ nav:
 - Kubernetes:
   - Basics I: k8s/index.md
   - Basics II: k8s/part2.md
+  - Basics III: k8s/part3.md
   - Tools: k8s/tools.md
   - Helm: k8s/helm.md
   - Create Cluster: k8s/create-cluster.md

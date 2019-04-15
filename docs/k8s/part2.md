@@ -1,4 +1,12 @@
-# Kubernetes Intermediate
+# Kubernetes Basics - Parts II
+
+!!! Info
+    This workshop segment expect you to be inside a cloned repository of `k8s-specs`.
+
+    ```bash
+    git clone https://github.com/vfarcic/k8s-specs.git
+    cd k8s-specs
+    ```
 
 ## Points to cover
 
@@ -7,8 +15,6 @@
 * Dividing A Cluster Into Namespaces
 * Securing Kubernetes Clusters
 * Managing Resources
-* Persisting State
-* Deploying Stateful Applications At Scale
 
 ## ConfigMap
 
@@ -360,99 +366,407 @@ kubectl delete pod test
 
 ## Resource limits & requests
 
-## Volumes
+### Enable Heapster
 
-### Volume
+> Heapster enables Container Cluster Monitoring and Performance Analysis for Kubernetes (versions v1.0.6 and higher), and platforms which include it.
 
-### Persistent Volume
+!!! Info
+    **GKE** has heapster installed and enabled by default.
 
-## StatefulSet
+```bash tab="Minkube"
+minikube addons enable heapster
+```
 
-```YAML
-# INSERT Jenkins STS Yaml
+```bash tab="EKS"
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-config/influxdb/heapster.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-config/influxdb/influxdb.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-config/rbac/heapster-rbac.yaml
+```
+
+!!! Warning
+    Heapster is now EOL, but still serves a purpose for this demo.
+    Please do NOT use this in production systems.
+
+### View resources
+
+```bash
+cat res/go-demo-2-random.yml
 ```
 
 ```bash
-cat sts/jenkins.yml
-
-kubectl apply -f sts/jenkins.yml --record
-
-kubectl -n jenkins rollout status sts jenkins
-
-kubectl -n jenkins get pvc
-
-kubectl -n jenkins get pv
+kubectl create -f res/go-demo-2-random.yml --record --save-config
 ```
 
-* look at PVC template
-* look at PVC
-* look at PV
+```bash
+kubectl rollout status deployment go-demo-2-api
+```
+
+```bash
+kubectl describe deploy go-demo-2-api
+```
+
+```bash
+kubectl describe nodes
+```
+
+### Expose heapster api endpoint
+
+!!! Info
+    The version of `heapster` might be different.
+    Please confirm the actual name with the command below.
+    ```bash
+    kubectl get deployment -n kube-system
+    ```
 
 ```bash tab="GKE"
-JENKINS_ADDR=$(kubectl -n jenkins get ing jenkins \
+kubectl -n kube-system expose deployment heapster-v1.6.0-beta.1 \
+    --name heapster-api --port 8082 --type LoadBalancer
+```
+
+```bash tab="EKS"
+kubectl -n kube-system expose deployment heapster \
+    --name heapster-api --port 8082 --type LoadBalancer
+```
+
+```bash tab="Minikube"
+kubectl -n kube-system expose rc heapster \
+    --name heapster-api --port 8082 --type NodePort
+```
+
+### Measure consumption
+
+!!! Info
+    You can also use a tool such as [Kube Capacity](/k8s/tools/#kube-capacity) for easier access to these metrics.
+
+```bash
+kubectl -n kube-system get pods
+```
+
+```bash
+kubectl -n kube-system get svc heapster-api -o json
+```
+
+### Measure consumption 2
+
+```bash tab="ALL (first)"
+PORT=$(kubectl -n kube-system get svc heapster-api \
+    -o jsonpath="{.spec.ports[0].nodePort}")
+PORT=8082
+```
+
+```bash tab="GKE"
+ADDR=$(kubectl -n kube-system get svc heapster-api \
     -o jsonpath="{.status.loadBalancer.ingress[0].ip}")
 ```
 
 ```bash tab="EKS"
-JENKINS_ADDR=$(kubectl -n jenkins get ing jenkins \
+ADDR=$(kubectl -n kube-system get svc heapster-api \
     -o jsonpath="{.status.loadBalancer.ingress[0].hostname}")
 ```
 
+```bash tab="Minikube"
+ADDR=$(minikube ip)
+```
+
+### Measure consumption 3
+
 ```bash
-open "http://$JENKINS_ADDR/jenkins"
+BASE_URL="http://$ADDR:$PORT/api/v1/model/namespaces/default/pods"
+
+curl "$BASE_URL"
 ```
 
 ```bash
-kubectl delete ns jenkins
-```
-
-### Optional
-
-* teaches why STS type is needed
-* cannot replicate database on the same data storage
-* so create unique DB's via STS with PVC Templates
-* see: https://vfarcic.github.io/devops23/workshop-short.html#/33/9
-
-```bash
-cat sts/go-demo-3-deploy.yml
-
-kubectl apply -f sts/go-demo-3-deploy.yml --record
-
-kubectl -n go-demo-3 rollout status deployment api
-
-kubectl -n go-demo-3 get pods
-
-DB_1=$(kubectl -n go-demo-3 get pods -l app=db \
+DB_POD_NAME=$(kubectl get pods -l service=go-demo-2 -l type=db \
     -o jsonpath="{.items[0].metadata.name}")
-
-DB_2=$(kubectl -n go-demo-3 get pods -l app=db \
-    -o jsonpath="{.items[1].metadata.name}")
 ```
 
 ```bash
-kubectl -n go-demo-3 logs $DB_1
-
-kubectl -n go-demo-3 logs $DB_2
-
-kubectl get pv
-
-kubectl delete ns go-demo-3
+curl "$BASE_URL/$DB_POD_NAME/containers/db/metrics"
 ```
-
-### Use STS instead
-
-* See: https://vfarcic.github.io/devops23/workshop-short.html#/33/12
 
 ```bash
-cat sts/go-demo-3-sts.yml
-
-kubectl apply -f sts/go-demo-3-sts.yml --record
-
-kubectl -n go-demo-3 get pods
-
-kubectl get pv
+curl "$BASE_URL/$DB_POD_NAME/containers/db/metrics/memory/usage"
 ```
 
-## Annotations
+```bash
+curl "$BASE_URL/$DB_POD_NAME/containers/db/metrics/cpu/usage_rate"
+```
 
-## CRD's
+### Resource discrepancies
+
+```bash
+cat res/go-demo-2-insuf-mem.yml
+```
+
+```bash
+kubectl apply -f res/go-demo-2-insuf-mem.yml --record
+```
+
+```bash
+kubectl get pods
+```
+
+```bash
+kubectl describe pod go-demo-2-db
+```
+
+```bash
+cat res/go-demo-2-insuf-node.yml
+```
+
+```bash
+kubectl apply -f res/go-demo-2-insuf-node.yml --record
+```
+
+```bash
+kubectl get pods
+```
+
+```bash
+kubectl describe pod go-demo-2-db
+```
+
+### Resource discrepancies 2
+
+```bash
+kubectl apply -f res/go-demo-2-random.yml --record
+```
+
+```bash
+kubectl rollout status deployment go-demo-2-db
+```
+
+```bash
+kubectl rollout status deployment go-demo-2-api
+```
+
+### Adjusting resources
+
+```bash
+DB_POD_NAME=$(kubectl get pods -l service=go-demo-2 \
+    -l type=db -o jsonpath="{.items[0].metadata.name}")
+```
+
+```bash
+curl "$BASE_URL/$DB_POD_NAME/containers/db/metrics/memory/usage"
+```
+
+```bash
+curl "$BASE_URL/$DB_POD_NAME/containers/db/metrics/cpu/usage_rate"
+```
+
+```bash
+API_POD_NAME=$(kubectl get pods -l service=go-demo-2 \
+    -l type=api -o jsonpath="{.items[0].metadata.name}")
+```
+
+```bash
+curl "$BASE_URL/$API_POD_NAME/containers/api/metrics/memory/usage"
+```
+
+```bash
+curl "$BASE_URL/$API_POD_NAME/containers/api/metrics/cpu/usage_rate"
+```
+
+### Adjusting resources 2
+
+```bash
+cat res/go-demo-2.yml
+```
+
+```bash
+kubectl apply -f res/go-demo-2.yml --record
+```
+
+```bash
+kubectl rollout status deployment go-demo-2-api
+```
+
+### QOS
+
+```bash
+kubectl describe pod go-demo-2-db
+```
+
+```bash
+cat res/go-demo-2-qos.yml
+```
+
+```bash
+kubectl apply -f res/go-demo-2-qos.yml --record
+```
+
+```bash
+kubectl rollout status deployment go-demo-2-db
+```
+
+```bash
+kubectl describe pod go-demo-2-db
+```
+
+```bash
+kubectl describe pod go-demo-2-api
+```
+
+```bash
+kubectl delete -f res/go-demo-2-qos.yml
+```
+
+### Defaults & Limitations
+
+```bash
+kubectl create namespace test
+```
+
+```bash
+cat res/limit-range.yml
+```
+
+```bash
+kubectl -n test create -f res/limit-range.yml \
+    --save-config --record
+```
+
+```bash
+kubectl describe namespace test
+```
+
+```bash
+cat res/go-demo-2-no-res.yml
+```
+
+```bash
+kubectl -n test create -f res/go-demo-2-no-res.yml \
+    --save-config --record
+```
+
+```bash
+kubectl -n test rollout status deployment go-demo-2-api
+```
+
+### Defaults & Limitations 2
+
+```bash
+kubectl -n test describe pod go-demo-2-db
+```
+
+```bash
+cat res/go-demo-2.yml
+```
+
+```bash
+kubectl -n test apply -f res/go-demo-2.yml --record
+```
+
+```bash
+kubectl -n test get events -w
+```
+
+```bash
+kubectl -n test run test --image alpine --requests memory=100Mi \
+    --restart Never sleep 10000
+```
+
+```bash
+kubectl -n test run test --image alpine --requests memory=1Mi \
+    --restart Never sleep 10000
+```
+
+```bash
+kubectl delete namespace test
+```
+
+### Resource Quotas
+
+```bash
+cat res/dev.yml
+```
+
+```bash
+kubectl create -f res/dev.yml --record --save-config
+```
+
+```bash
+kubectl -n dev describe quota dev
+```
+
+```bash
+kubectl -n dev create -f res/go-demo-2.yml --save-config --record
+```
+
+```bash
+kubectl -n dev rollout status deployment go-demo-2-api
+```
+
+```bash
+kubectl -n dev describe quota dev
+```
+
+### Resource Quotas 2
+
+```bash
+cat res/go-demo-2-scaled.yml
+```
+
+```bash
+kubectl -n dev apply -f res/go-demo-2-scaled.yml --record
+```
+
+```bash
+kubectl -n dev get events
+```
+
+```bash
+kubectl describe namespace dev
+```
+
+```bash
+kubectl get pods -n dev
+```
+
+```bash
+kubectl -n dev apply -f res/go-demo-2.yml --record
+```
+
+```bash
+kubectl -n dev rollout status deployment go-demo-2-api
+```
+
+### Resource Quotas 3
+
+```bash
+cat res/go-demo-2-mem.yml
+```
+
+```bash
+kubectl -n dev apply -f res/go-demo-2-mem.yml --record
+```
+
+```bash
+kubectl -n dev get events | grep mem
+```
+
+```bash
+kubectl describe namespace dev
+```
+
+```bash
+kubectl -n dev apply -f res/go-demo-2.yml --record
+```
+
+```bash
+kubectl -n dev rollout status deployment go-demo-2-api
+```
+
+```bash
+kubectl expose deployment go-demo-2-api -n dev \
+    --name go-demo-2-api --port 8080 --type NodePort
+```
+
+### Cleanup
+
+```bash
+kubectl delete ns dev
+```
+
