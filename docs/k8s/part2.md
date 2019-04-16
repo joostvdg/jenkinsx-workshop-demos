@@ -362,7 +362,14 @@ kubectl delete -f ns/go-demo-2.yml
 kubectl delete pod test
 ```
 
-## Service Accounts
+## Securing Kubernetes
+
+### GKE
+
+* Go to [Cloud Identity and Access Management Overview](https://cloud.google.com/iam/docs/overview)
+* And [Kubernetes Engine Creating Cloud IAM Policies](https://cloud.google.com/kubernetes-engine/docs/how-to/iam#primitive)
+* Create a user and a cluster named jdoe
+* When finished, continue from the Deploying go-demo-2 slide.
 
 ## Resource limits & requests
 
