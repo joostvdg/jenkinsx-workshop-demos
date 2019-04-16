@@ -30,54 +30,83 @@ cd k8s-specs
 
 ## Pod
 
+### View Yaml
+
 ```bash
 cat pod/db.yml
 ```
 
+### Create & Update
+
 ```bash
 kubectl create -f pod/db.yml
+```
+
+```bash
 kubectl create -f pod/db.yml
+```
+
+```bash
 kubectl apply -f pod/db.yml
 ```
 
-```bash
+### View Pod
+
+```bash tab="Singular"
 kubectl get pod
+```
+
+```bash tab="Plural"
 kubectl get pods
+```
+
+```bash tab="Shorthand"
 kubectl get po
 ```
 
-```bash
-kubectl get po -o yaml
+```bash tab="YAML"
+kubectl get po db -o yaml
 ```
 
-```bash
-kubectl get po -o json
+```bash tab="JSON"
+kubectl get po db -o json
 ```
 
-
-```bash
-kubectl get po -o jsonpath="{}"
+```bash tab="JSON Path
+kubectl get pod db -o jsonpath="{.metadata.name}"
 ```
 
-```bash
+```bash tab="Describe"
 kubectl describe pod db
 ```
 
+### Enter the Pod
+
 ```bash
 kubectl exec db ps aux
+```
 
+```bash
 kubectl exec -it db sh
+```
 
+```bash
 echo 'db.stats()' | mongo localhost:27017/test
+```
 
+```bash
 exit
+```
 
+```bash
 kubectl logs db
 ```
 
 ```bash
 kubectl exec -it db pkill mongod
+```
 
+```bash
 kubectl get pods
 ```
 
@@ -89,23 +118,40 @@ kubectl delete -f pod/db.yml
 
 ## ReplicaSet
 
+### View YAML
+
 ```bash
 cat rs/go-demo-2.yml
+```
 
+### Create ReplicaSet
+
+```bash
 kubectl create -f rs/go-demo-2.yml
+```
 
+### View ReplicaSet
+
+```bash
 kubectl get rs
+```
 
+```bash
 kubectl describe -f rs/go-demo-2.yml
+```
 
+### Delete Pod
+
+```bash
 kubectl get pods
 ```
 
 ```bash
 POD_NAME=$(kubectl get pods -o name | tail -1)
-
 kubectl delete $POD_NAME
+```
 
+```bash
 kubectl get pods
 ```
 
@@ -116,6 +162,24 @@ kubectl delete -f rs/go-demo-2.yml
 ```
 
 ## Labels
+
+### Create a Pod
+
+```bash
+kubectl create -f pod/db.yml
+```
+
+### Get it by Label
+
+```bash
+kubectl get po -l type=db
+```
+
+### Get multiple
+
+```bash
+kubectl get po -n kube-system -l component=kube-proxy,tier=node
+```
 
 ## Service
 
@@ -161,8 +225,7 @@ IP=$(kubectl get svc go-demo-2-api \
 IP=$(minikube ip)
 ```
 
-
-```bash
+```bash tab="All - after"
 echo $IP
 ```
 
