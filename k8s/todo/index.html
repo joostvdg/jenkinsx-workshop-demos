@@ -635,6 +635,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../part3/" title="Basics III" class="md-nav__link">
+      Basics III
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../tools/" title="Tools" class="md-nav__link">
       Tools
     </a>
@@ -760,6 +772,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#slides" title="Slides" class="md-nav__link">
+    Slides
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-docker-images" title="Building Docker Images" class="md-nav__link">
+    Building Docker Images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -781,8 +813,26 @@
                 
                 <h1 id="kubernetes-basics">Kubernetes basics<a class="headerlink" href="#kubernetes-basics" title="Permanent link">&para;</a></h1>
 <h2 id="slide-notes">Slide notes<a class="headerlink" href="#slide-notes" title="Permanent link">&para;</a></h2>
+<p>A few points I forgot, and that we should talk about:</p>
 <ul>
-<li>config maps</li>
+<li>
+<p>Gitops</p>
+</li>
+<li>
+<p>Cron-based Jenkins jobs: we have quite a few right now (I need to go over all our current jobs with you). Prefer event-based over scheduled. What if we have some jobs we really want to schedule?</p>
+</li>
+<li>
+<p>gcloud SDK (CLI). A few of us are used to it, but most people never used it. Because it’s also our client for things like pubsub or GCS, it might be good to have a (small) part about google cloud, and how to use it. There is also the “service account” part that I mentioned (in the “pushing to GCR” part), that is related.</p>
+</li>
+<li>
+<p>static envs vs dynamic envs. For the moment everybody is used to static envs. I think it’s important to show the advantage of dynamic env. Could be a good intro to preview envs</p>
+</li>
+<li>
+<p>in the “Jenkins x” part, it would be great if we can show an example of using updatebot. That’s a great tool, and I love how the Jenkins x project is using it to automate the versions updates everywhere, and I’d love to do the same thing.</p>
+</li>
+<li>
+<p>config maps</p>
+</li>
 <li>labels</li>
 <li>annotations</li>
 <li>secrets</li>
@@ -810,6 +860,18 @@
 <li>namespaces<ul>
 <li>purpose</li>
 <li>impact on DNS</li>
+</ul>
+</li>
+<li>QoS: <a href="https://vfarcic.github.io/devops23/workshop-short.html#/29/24">https://vfarcic.github.io/devops23/workshop-short.html#/29/24</a></li>
+<li>Volumes<ul>
+<li>volumes</li>
+<li>persistent volumes</li>
+<li>volume types</li>
+<li>persistent volume claims</li>
+<li>attaching persistent volume claims</li>
+<li>PersistendVolumeClaimTemplates</li>
+<li>Provisioners, such as NFS (incl. EFS and filestor support)</li>
+<li>storage Classes</li>
 </ul>
 </li>
 <li>Infrastructure As Code</li>
@@ -846,6 +908,13 @@
 <li>but also provide predefined sets</li>
 </ul>
 </li>
+<li>STS:<ul>
+<li>teaches why STS type is needed</li>
+<li>cannot replicate database on the same data storage</li>
+<li>so create unique DB's via STS with PVC Templates</li>
+<li>see: <a href="https://vfarcic.github.io/devops23/workshop-short.html#/33/9">https://vfarcic.github.io/devops23/workshop-short.html#/33/9</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="ideas-workshop">Ideas workshop<a class="headerlink" href="#ideas-workshop" title="Permanent link">&para;</a></h2>
 <ul>
@@ -872,6 +941,73 @@
 <li>show imperative</li>
 <li>show declarative</li>
 <li></li>
+</ul>
+<h2 id="slides">Slides<a class="headerlink" href="#slides" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Infrastructure As Code</li>
+<li>Declarative instead of Imperative</li>
+<li>Self-healing</li>
+<li>High-Availability (HA)</li>
+<li>Dynamic sizing</li>
+<li>Dynamic scaling</li>
+<li>Immutable</li>
+<li>Separate state from process<ul>
+<li>12-factor app/container</li>
+</ul>
+</li>
+<li>Automatable</li>
+<li>Standard but Extensible</li>
+<li>Better utilization<ul>
+<li>Serverless even better</li>
+<li>but more expensive for <em>predictable load</em></li>
+</ul>
+</li>
+<li>Dynamic Service Discovery</li>
+<li>Think Clusters of Cluster<ul>
+<li>Static = fiction or dead</li>
+</ul>
+</li>
+<li>Pets vs Cattle</li>
+<li>Self-Service &amp; On-Demand</li>
+<li>Curated instead of Fixed</li>
+<li>Layers of Abstraction<ul>
+<li>to decouple</li>
+<li>create asynchronisity</li>
+<li>separate process &amp; state</li>
+<li>create fundamental building blocks</li>
+<li>but also provide predefined sets</li>
+</ul>
+</li>
+</ul>
+<h3 id="building-docker-images">Building Docker Images<a class="headerlink" href="#building-docker-images" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Docker</li>
+<li>Docker Multi-stage</li>
+<li>BuildKit</li>
+<li>Docker Socket &amp; security issues</li>
+<li>Alternatives<ul>
+<li>Kaniko</li>
+<li>Buildah</li>
+<li>IMG</li>
+<li>Others?</li>
+</ul>
+</li>
+<li>Best Practices<ul>
+<li>Smaller is usually better</li>
+<li>Optimise for short-running <ul>
+<li>static links</li>
+<li><code>FROM scratch</code></li>
+<li>external state</li>
+</ul>
+</li>
+<li>stay up-to-date with base images</li>
+<li>limit packages used</li>
+<li>use a (lightweight) process manager</li>
+<li>do not tie into a Runtime</li>
+<li>i.e. make the image suitable forn Swarm, Mesos, K8S</li>
+<li></li>
+</ul>
+</li>
 </ul>
                 
                   

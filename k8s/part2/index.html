@@ -101,7 +101,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#kubernetes-intermediate" tabindex="1" class="md-skip">
+      <a href="#kubernetes-basics-parts-ii" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -807,73 +807,130 @@
     Resource limits &amp; requests
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#volumes" title="Volumes" class="md-nav__link">
-    Volumes
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#volume" title="Volume" class="md-nav__link">
-    Volume
+  <a href="#enable-heapster" title="Enable Heapster" class="md-nav__link">
+    Enable Heapster
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#persistent-volume" title="Persistent Volume" class="md-nav__link">
-    Persistent Volume
+  <a href="#view-resources" title="View resources" class="md-nav__link">
+    View resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expose-heapster-api-endpoint" title="Expose heapster api endpoint" class="md-nav__link">
+    Expose heapster api endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure-consumption" title="Measure consumption" class="md-nav__link">
+    Measure consumption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure-consumption-2" title="Measure consumption 2" class="md-nav__link">
+    Measure consumption 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure-consumption-3" title="Measure consumption 3" class="md-nav__link">
+    Measure consumption 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-discrepancies" title="Resource discrepancies" class="md-nav__link">
+    Resource discrepancies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-discrepancies-2" title="Resource discrepancies 2" class="md-nav__link">
+    Resource discrepancies 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjusting-resources" title="Adjusting resources" class="md-nav__link">
+    Adjusting resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjusting-resources-2" title="Adjusting resources 2" class="md-nav__link">
+    Adjusting resources 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qos" title="QOS" class="md-nav__link">
+    QOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaults-limitations" title="Defaults &amp; Limitations" class="md-nav__link">
+    Defaults &amp; Limitations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaults-limitations-2" title="Defaults &amp; Limitations 2" class="md-nav__link">
+    Defaults &amp; Limitations 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-quotas" title="Resource Quotas" class="md-nav__link">
+    Resource Quotas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-quotas-2" title="Resource Quotas 2" class="md-nav__link">
+    Resource Quotas 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-quotas-3" title="Resource Quotas 3" class="md-nav__link">
+    Resource Quotas 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup_2" title="Cleanup" class="md-nav__link">
+    Cleanup
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#statefulset" title="StatefulSet" class="md-nav__link">
-    StatefulSet
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#optional" title="Optional" class="md-nav__link">
-    Optional
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#use-sts-instead" title="Use STS instead" class="md-nav__link">
-    Use STS instead
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#annotations" title="Annotations" class="md-nav__link">
-    Annotations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#crds" title="CRD's" class="md-nav__link">
-    CRD's
-  </a>
   
 </li>
       
@@ -885,6 +942,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../part3/" title="Basics III" class="md-nav__link">
+      Basics III
+    </a>
   </li>
 
         
@@ -1141,73 +1210,130 @@
     Resource limits &amp; requests
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#volumes" title="Volumes" class="md-nav__link">
-    Volumes
-  </a>
-  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#volume" title="Volume" class="md-nav__link">
-    Volume
+  <a href="#enable-heapster" title="Enable Heapster" class="md-nav__link">
+    Enable Heapster
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#persistent-volume" title="Persistent Volume" class="md-nav__link">
-    Persistent Volume
+  <a href="#view-resources" title="View resources" class="md-nav__link">
+    View resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expose-heapster-api-endpoint" title="Expose heapster api endpoint" class="md-nav__link">
+    Expose heapster api endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure-consumption" title="Measure consumption" class="md-nav__link">
+    Measure consumption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure-consumption-2" title="Measure consumption 2" class="md-nav__link">
+    Measure consumption 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#measure-consumption-3" title="Measure consumption 3" class="md-nav__link">
+    Measure consumption 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-discrepancies" title="Resource discrepancies" class="md-nav__link">
+    Resource discrepancies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-discrepancies-2" title="Resource discrepancies 2" class="md-nav__link">
+    Resource discrepancies 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjusting-resources" title="Adjusting resources" class="md-nav__link">
+    Adjusting resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjusting-resources-2" title="Adjusting resources 2" class="md-nav__link">
+    Adjusting resources 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qos" title="QOS" class="md-nav__link">
+    QOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaults-limitations" title="Defaults &amp; Limitations" class="md-nav__link">
+    Defaults &amp; Limitations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defaults-limitations-2" title="Defaults &amp; Limitations 2" class="md-nav__link">
+    Defaults &amp; Limitations 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-quotas" title="Resource Quotas" class="md-nav__link">
+    Resource Quotas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-quotas-2" title="Resource Quotas 2" class="md-nav__link">
+    Resource Quotas 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-quotas-3" title="Resource Quotas 3" class="md-nav__link">
+    Resource Quotas 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup_2" title="Cleanup" class="md-nav__link">
+    Cleanup
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#statefulset" title="StatefulSet" class="md-nav__link">
-    StatefulSet
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#optional" title="Optional" class="md-nav__link">
-    Optional
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#use-sts-instead" title="Use STS instead" class="md-nav__link">
-    Use STS instead
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#annotations" title="Annotations" class="md-nav__link">
-    Annotations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#crds" title="CRD's" class="md-nav__link">
-    CRD's
-  </a>
   
 </li>
       
@@ -1230,7 +1356,17 @@
                   <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/edit/master/docs/k8s/part2.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="kubernetes-intermediate">Kubernetes Intermediate<a class="headerlink" href="#kubernetes-intermediate" title="Permanent link">&para;</a></h1>
+                <h1 id="kubernetes-basics-parts-ii">Kubernetes Basics - Parts II<a class="headerlink" href="#kubernetes-basics-parts-ii" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This workshop segment expect you to be inside a cloned repository of <code>k8s-specs</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone https://github.com/vfarcic/k8s-specs.git
+<span class="nb">cd</span> k8s-specs
+</pre></div>
+</td></tr></table>
+
+</div>
 <h2 id="points-to-cover">Points to cover<a class="headerlink" href="#points-to-cover" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Using ConfigMaps To Inject Configuration Files</li>
@@ -1238,8 +1374,6 @@
 <li>Dividing A Cluster Into Namespaces</li>
 <li>Securing Kubernetes Clusters</li>
 <li>Managing Resources</li>
-<li>Persisting State</li>
-<li>Deploying Stateful Applications At Scale</li>
 </ul>
 <h2 id="configmap">ConfigMap<a class="headerlink" href="#configmap" title="Permanent link">&para;</a></h2>
 <h3 id="create-from-files">Create from files<a class="headerlink" href="#create-from-files" title="Permanent link">&para;</a></h3>
@@ -1615,136 +1749,431 @@ kubectl delete pod <span class="nb">test</span>
 
 <h2 id="service-accounts">Service Accounts<a class="headerlink" href="#service-accounts" title="Permanent link">&para;</a></h2>
 <h2 id="resource-limits-requests">Resource limits &amp; requests<a class="headerlink" href="#resource-limits-requests" title="Permanent link">&para;</a></h2>
-<h2 id="volumes">Volumes<a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h2>
-<h3 id="volume">Volume<a class="headerlink" href="#volume" title="Permanent link">&para;</a></h3>
-<h3 id="persistent-volume">Persistent Volume<a class="headerlink" href="#persistent-volume" title="Permanent link">&para;</a></h3>
-<h2 id="statefulset">StatefulSet<a class="headerlink" href="#statefulset" title="Permanent link">&para;</a></h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># INSERT Jenkins STS Yaml</span>
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat sts/jenkins.yml
-
-kubectl apply -f sts/jenkins.yml --record
-
-kubectl -n jenkins rollout status sts jenkins
-
-kubectl -n jenkins get pvc
-
-kubectl -n jenkins get pv
-</pre></div>
-</td></tr></table>
-
-<ul>
-<li>look at PVC template</li>
-<li>look at PVC</li>
-<li>look at PV</li>
-</ul>
+<h3 id="enable-heapster">Enable Heapster<a class="headerlink" href="#enable-heapster" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Heapster enables Container Cluster Monitoring and Performance Analysis for Kubernetes (versions v1.0.6 and higher), and platforms which include it.</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>GKE</strong> has heapster installed and enabled by default.</p>
+</div>
 <div class="superfences-tabs">
 <input name="__tabs_5" type="radio" id="__tab_5_0" checked="checked" />
-<label for="__tab_5_0">GKE</label>
-<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">JENKINS_ADDR</span><span class="o">=</span><span class="k">$(</span>kubectl -n jenkins get ing jenkins <span class="se">\</span>
-    -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.status.loadBalancer.ingress[0].ip}&quot;</span><span class="k">)</span>
+<label for="__tab_5_0">Minkube</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>minikube addons <span class="nb">enable</span> heapster
 </pre></div>
 </td></tr></table></div>
 <input name="__tabs_5" type="radio" id="__tab_5_1" />
 <label for="__tab_5_1">EKS</label>
 <div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">JENKINS_ADDR</span><span class="o">=</span><span class="k">$(</span>kubectl -n jenkins get ing jenkins <span class="se">\</span>
-    -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.status.loadBalancer.ingress[0].hostname}&quot;</span><span class="k">)</span>
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl apply -f https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-config/influxdb/heapster.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-config/influxdb/influxdb.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/heapster/master/deploy/kube-config/rbac/heapster-rbac.yaml
 </pre></div>
 </td></tr></table></div>
 </div>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>open <span class="s2">&quot;http://</span><span class="nv">$JENKINS_ADDR</span><span class="s2">/jenkins&quot;</span>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Heapster is now EOL, but still serves a purpose for this demo.
+Please do NOT use this in production systems.</p>
+</div>
+<h3 id="view-resources">View resources<a class="headerlink" href="#view-resources" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2-random.yml
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete ns jenkins
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create -f res/go-demo-2-random.yml --record --save-config
 </pre></div>
 </td></tr></table>
 
-<h3 id="optional">Optional<a class="headerlink" href="#optional" title="Permanent link">&para;</a></h3>
-<ul>
-<li>teaches why STS type is needed</li>
-<li>cannot replicate database on the same data storage</li>
-<li>so create unique DB's via STS with PVC Templates</li>
-<li>see: <a href="https://vfarcic.github.io/devops23/workshop-short.html#/33/9">https://vfarcic.github.io/devops23/workshop-short.html#/33/9</a></li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat sts/go-demo-3-deploy.yml
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl rollout status deployment go-demo-2-api
+</pre></div>
+</td></tr></table>
 
-kubectl apply -f sts/go-demo-3-deploy.yml --record
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe deploy go-demo-2-api
+</pre></div>
+</td></tr></table>
 
-kubectl -n go-demo-3 rollout status deployment api
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe nodes
+</pre></div>
+</td></tr></table>
 
-kubectl -n go-demo-3 get pods
+<h3 id="expose-heapster-api-endpoint">Expose heapster api endpoint<a class="headerlink" href="#expose-heapster-api-endpoint" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The version of <code>heapster</code> might be different.
+Please confirm the actual name with the command below.
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get deployment -n kube-system
+</pre></div>
+</td></tr></table></p>
+</div>
+<div class="superfences-tabs">
+<input name="__tabs_6" type="radio" id="__tab_6_0" checked="checked" />
+<label for="__tab_6_0">GKE</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n kube-system expose deployment heapster-v1.6.0-beta.1 <span class="se">\</span>
+    --name heapster-api --port <span class="m">8082</span> --type LoadBalancer
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_6" type="radio" id="__tab_6_1" />
+<label for="__tab_6_1">EKS</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n kube-system expose deployment heapster <span class="se">\</span>
+    --name heapster-api --port <span class="m">8082</span> --type LoadBalancer
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_6" type="radio" id="__tab_6_2" />
+<label for="__tab_6_2">Minikube</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n kube-system expose rc heapster <span class="se">\</span>
+    --name heapster-api --port <span class="m">8082</span> --type NodePort
+</pre></div>
+</td></tr></table></div>
+</div>
+<h3 id="measure-consumption">Measure consumption<a class="headerlink" href="#measure-consumption" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You can also use a tool such as <a href="/k8s/tools/#kube-capacity">Kube Capacity</a> for easier access to these metrics.</p>
+</div>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n kube-system get pods
+</pre></div>
+</td></tr></table>
 
-<span class="nv">DB_1</span><span class="o">=</span><span class="k">$(</span>kubectl -n go-demo-3 get pods -l <span class="nv">app</span><span class="o">=</span>db <span class="se">\</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n kube-system get svc heapster-api -o json
+</pre></div>
+</td></tr></table>
+
+<h3 id="measure-consumption-2">Measure consumption 2<a class="headerlink" href="#measure-consumption-2" title="Permanent link">&para;</a></h3>
+<div class="superfences-tabs">
+<input name="__tabs_7" type="radio" id="__tab_7_0" checked="checked" />
+<label for="__tab_7_0">ALL (first)</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">PORT</span><span class="o">=</span><span class="k">$(</span>kubectl -n kube-system get svc heapster-api <span class="se">\</span>
+    -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.spec.ports[0].nodePort}&quot;</span><span class="k">)</span>
+<span class="nv">PORT</span><span class="o">=</span><span class="m">8082</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_7" type="radio" id="__tab_7_1" />
+<label for="__tab_7_1">GKE</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">ADDR</span><span class="o">=</span><span class="k">$(</span>kubectl -n kube-system get svc heapster-api <span class="se">\</span>
+    -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.status.loadBalancer.ingress[0].ip}&quot;</span><span class="k">)</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_7" type="radio" id="__tab_7_2" />
+<label for="__tab_7_2">EKS</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">ADDR</span><span class="o">=</span><span class="k">$(</span>kubectl -n kube-system get svc heapster-api <span class="se">\</span>
+    -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.status.loadBalancer.ingress[0].hostname}&quot;</span><span class="k">)</span>
+</pre></div>
+</td></tr></table></div>
+<input name="__tabs_7" type="radio" id="__tab_7_3" />
+<label for="__tab_7_3">Minikube</label>
+<div class="superfences-content"><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">ADDR</span><span class="o">=</span><span class="k">$(</span>minikube ip<span class="k">)</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<h3 id="measure-consumption-3">Measure consumption 3<a class="headerlink" href="#measure-consumption-3" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">BASE_URL</span><span class="o">=</span><span class="s2">&quot;http://</span><span class="nv">$ADDR</span><span class="s2">:</span><span class="nv">$PORT</span><span class="s2">/api/v1/model/namespaces/default/pods&quot;</span>
+
+curl <span class="s2">&quot;</span><span class="nv">$BASE_URL</span><span class="s2">&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">DB_POD_NAME</span><span class="o">=</span><span class="k">$(</span>kubectl get pods -l <span class="nv">service</span><span class="o">=</span>go-demo-2 -l <span class="nv">type</span><span class="o">=</span>db <span class="se">\</span>
     -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[0].metadata.name}&quot;</span><span class="k">)</span>
+</pre></div>
+</td></tr></table>
 
-<span class="nv">DB_2</span><span class="o">=</span><span class="k">$(</span>kubectl -n go-demo-3 get pods -l <span class="nv">app</span><span class="o">=</span>db <span class="se">\</span>
-    -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[1].metadata.name}&quot;</span><span class="k">)</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl <span class="s2">&quot;</span><span class="nv">$BASE_URL</span><span class="s2">/</span><span class="nv">$DB_POD_NAME</span><span class="s2">/containers/db/metrics&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl <span class="s2">&quot;</span><span class="nv">$BASE_URL</span><span class="s2">/</span><span class="nv">$DB_POD_NAME</span><span class="s2">/containers/db/metrics/memory/usage&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl <span class="s2">&quot;</span><span class="nv">$BASE_URL</span><span class="s2">/</span><span class="nv">$DB_POD_NAME</span><span class="s2">/containers/db/metrics/cpu/usage_rate&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="resource-discrepancies">Resource discrepancies<a class="headerlink" href="#resource-discrepancies" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2-insuf-mem.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl apply -f res/go-demo-2-insuf-mem.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get pods
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe pod go-demo-2-db
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2-insuf-node.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl apply -f res/go-demo-2-insuf-node.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get pods
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe pod go-demo-2-db
+</pre></div>
+</td></tr></table>
+
+<h3 id="resource-discrepancies-2">Resource discrepancies 2<a class="headerlink" href="#resource-discrepancies-2" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl apply -f res/go-demo-2-random.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl rollout status deployment go-demo-2-db
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl rollout status deployment go-demo-2-api
+</pre></div>
+</td></tr></table>
+
+<h3 id="adjusting-resources">Adjusting resources<a class="headerlink" href="#adjusting-resources" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">DB_POD_NAME</span><span class="o">=</span><span class="k">$(</span>kubectl get pods -l <span class="nv">service</span><span class="o">=</span>go-demo-2 <span class="se">\</span>
+    -l <span class="nv">type</span><span class="o">=</span>db -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[0].metadata.name}&quot;</span><span class="k">)</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl <span class="s2">&quot;</span><span class="nv">$BASE_URL</span><span class="s2">/</span><span class="nv">$DB_POD_NAME</span><span class="s2">/containers/db/metrics/memory/usage&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl <span class="s2">&quot;</span><span class="nv">$BASE_URL</span><span class="s2">/</span><span class="nv">$DB_POD_NAME</span><span class="s2">/containers/db/metrics/cpu/usage_rate&quot;</span>
 </pre></div>
 </td></tr></table>
 
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n go-demo-3 logs <span class="nv">$DB_1</span>
-
-kubectl -n go-demo-3 logs <span class="nv">$DB_2</span>
-
-kubectl get pv
-
-kubectl delete ns go-demo-3
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">API_POD_NAME</span><span class="o">=</span><span class="k">$(</span>kubectl get pods -l <span class="nv">service</span><span class="o">=</span>go-demo-2 <span class="se">\</span>
+    -l <span class="nv">type</span><span class="o">=</span>api -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[0].metadata.name}&quot;</span><span class="k">)</span>
 </pre></div>
 </td></tr></table>
 
-<h3 id="use-sts-instead">Use STS instead<a class="headerlink" href="#use-sts-instead" title="Permanent link">&para;</a></h3>
-<ul>
-<li>See: <a href="https://vfarcic.github.io/devops23/workshop-short.html#/33/12">https://vfarcic.github.io/devops23/workshop-short.html#/33/12</a></li>
-</ul>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl <span class="s2">&quot;</span><span class="nv">$BASE_URL</span><span class="s2">/</span><span class="nv">$API_POD_NAME</span><span class="s2">/containers/api/metrics/memory/usage&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>curl <span class="s2">&quot;</span><span class="nv">$BASE_URL</span><span class="s2">/</span><span class="nv">$API_POD_NAME</span><span class="s2">/containers/api/metrics/cpu/usage_rate&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="adjusting-resources-2">Adjusting resources 2<a class="headerlink" href="#adjusting-resources-2" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl apply -f res/go-demo-2.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl rollout status deployment go-demo-2-api
+</pre></div>
+</td></tr></table>
+
+<h3 id="qos">QOS<a class="headerlink" href="#qos" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe pod go-demo-2-db
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2-qos.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl apply -f res/go-demo-2-qos.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl rollout status deployment go-demo-2-db
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe pod go-demo-2-db
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe pod go-demo-2-api
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete -f res/go-demo-2-qos.yml
+</pre></div>
+</td></tr></table>
+
+<h3 id="defaults-limitations">Defaults &amp; Limitations<a class="headerlink" href="#defaults-limitations" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create namespace <span class="nb">test</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/limit-range.yml
+</pre></div>
+</td></tr></table>
+
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat sts/go-demo-3-sts.yml
-
-kubectl apply -f sts/go-demo-3-sts.yml --record
-
-kubectl -n go-demo-3 get pods
-
-kubectl get pv
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n <span class="nb">test</span> create -f res/limit-range.yml <span class="se">\</span>
+    --save-config --record
 </pre></div>
 </td></tr></table>
 
-<h2 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">&para;</a></h2>
-<h2 id="crds">CRD's<a class="headerlink" href="#crds" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe namespace <span class="nb">test</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2-no-res.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n <span class="nb">test</span> create -f res/go-demo-2-no-res.yml <span class="se">\</span>
+    --save-config --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n <span class="nb">test</span> rollout status deployment go-demo-2-api
+</pre></div>
+</td></tr></table>
+
+<h3 id="defaults-limitations-2">Defaults &amp; Limitations 2<a class="headerlink" href="#defaults-limitations-2" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n <span class="nb">test</span> describe pod go-demo-2-db
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n <span class="nb">test</span> apply -f res/go-demo-2.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n <span class="nb">test</span> get events -w
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n <span class="nb">test</span> run <span class="nb">test</span> --image alpine --requests <span class="nv">memory</span><span class="o">=</span>100Mi <span class="se">\</span>
+    --restart Never sleep <span class="m">10000</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n <span class="nb">test</span> run <span class="nb">test</span> --image alpine --requests <span class="nv">memory</span><span class="o">=</span>1Mi <span class="se">\</span>
+    --restart Never sleep <span class="m">10000</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete namespace <span class="nb">test</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="resource-quotas">Resource Quotas<a class="headerlink" href="#resource-quotas" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/dev.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create -f res/dev.yml --record --save-config
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev describe quota dev
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev create -f res/go-demo-2.yml --save-config --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev rollout status deployment go-demo-2-api
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev describe quota dev
+</pre></div>
+</td></tr></table>
+
+<h3 id="resource-quotas-2">Resource Quotas 2<a class="headerlink" href="#resource-quotas-2" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2-scaled.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev apply -f res/go-demo-2-scaled.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev get events
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe namespace dev
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get pods -n dev
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev apply -f res/go-demo-2.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev rollout status deployment go-demo-2-api
+</pre></div>
+</td></tr></table>
+
+<h3 id="resource-quotas-3">Resource Quotas 3<a class="headerlink" href="#resource-quotas-3" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2-mem.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev apply -f res/go-demo-2-mem.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev get events <span class="p">|</span> grep mem
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe namespace dev
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev apply -f res/go-demo-2.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n dev rollout status deployment go-demo-2-api
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl expose deployment go-demo-2-api -n dev <span class="se">\</span>
+    --name go-demo-2-api --port <span class="m">8080</span> --type NodePort
+</pre></div>
+</td></tr></table>
+
+<h3 id="cleanup_2">Cleanup<a class="headerlink" href="#cleanup_2" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete ns dev
+</pre></div>
+</td></tr></table>
                 
                   
                 
@@ -1780,13 +2209,13 @@ kubectl get pv
           </a>
         
         
-          <a href="../tools/" title="Tools" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../part3/" title="Basics III" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Tools
+                Basics III
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
