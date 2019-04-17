@@ -221,8 +221,26 @@ POD_NAME=$(kubectl -n jenkins get pod --selector=app=jenkins \
 kubectl -n jenkins exec -it $POD_NAME pkill java
 ```
 
+Let's delete Jenkins' deployment.
+
 ```bash
 kubectl -n jenkins delete deploy jenkins
+```
+
+Confirm it is gone.
+
+```bash
+kubectl get all -n jenkins
+```
+
+Now, let's recreate Jenkins.
+
+```bash
+kubectl apply -f pv/jenkins-pv.yml --record
+```
+
+```bash
+kubectl -n jenkins rollout status deployment jenkins
 ```
 
 * confirm job is still there
