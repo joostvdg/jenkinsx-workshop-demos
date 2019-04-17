@@ -796,6 +796,47 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resource-limits-requests-short" title="Resource limits &amp; requests - SHORT" class="md-nav__link">
+    Resource limits &amp; requests - SHORT
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-resources" title="View resources" class="md-nav__link">
+    View resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#too-little-memory" title="Too little memory" class="md-nav__link">
+    Too little memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#too-much-memory" title="Too much memory" class="md-nav__link">
+    Too much memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup_2" title="Cleanup" class="md-nav__link">
+    Cleanup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#securing-kubernetes" title="Securing Kubernetes" class="md-nav__link">
     Securing Kubernetes
   </a>
@@ -831,7 +872,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#view-resources" title="View resources" class="md-nav__link">
+  <a href="#view-resources_1" title="View resources" class="md-nav__link">
     View resources
   </a>
   
@@ -936,7 +977,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cleanup_2" title="Cleanup" class="md-nav__link">
+  <a href="#cleanup_3" title="Cleanup" class="md-nav__link">
     Cleanup
   </a>
   
@@ -1212,6 +1253,47 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#resource-limits-requests-short" title="Resource limits &amp; requests - SHORT" class="md-nav__link">
+    Resource limits &amp; requests - SHORT
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#view-resources" title="View resources" class="md-nav__link">
+    View resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#too-little-memory" title="Too little memory" class="md-nav__link">
+    Too little memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#too-much-memory" title="Too much memory" class="md-nav__link">
+    Too much memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup_2" title="Cleanup" class="md-nav__link">
+    Cleanup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#securing-kubernetes" title="Securing Kubernetes" class="md-nav__link">
     Securing Kubernetes
   </a>
@@ -1247,7 +1329,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#view-resources" title="View resources" class="md-nav__link">
+  <a href="#view-resources_1" title="View resources" class="md-nav__link">
     View resources
   </a>
   
@@ -1352,7 +1434,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cleanup_2" title="Cleanup" class="md-nav__link">
+  <a href="#cleanup_3" title="Cleanup" class="md-nav__link">
     Cleanup
   </a>
   
@@ -1773,6 +1855,67 @@ kubectl delete pod <span class="nb">test</span>
 </pre></div>
 </td></tr></table>
 
+<h2 id="resource-limits-requests-short">Resource limits &amp; requests - SHORT<a class="headerlink" href="#resource-limits-requests-short" title="Permanent link">&para;</a></h2>
+<h3 id="view-resources">View resources<a class="headerlink" href="#view-resources" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2-random.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl create -f res/go-demo-2-random.yml --record --save-config
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl rollout status deployment go-demo-2-api
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe deploy go-demo-2-api
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe nodes
+</pre></div>
+</td></tr></table>
+
+<h3 id="too-little-memory">Too little memory<a class="headerlink" href="#too-little-memory" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2-insuf-mem.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl apply -f res/go-demo-2-insuf-mem.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get pods
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe pod go-demo-2-db
+</pre></div>
+</td></tr></table>
+
+<h3 id="too-much-memory">Too much memory<a class="headerlink" href="#too-much-memory" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2-insuf-node.yml
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl apply -f res/go-demo-2-insuf-node.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get pods
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl describe pod go-demo-2-db
+</pre></div>
+</td></tr></table>
+
+<h3 id="cleanup_2">Cleanup<a class="headerlink" href="#cleanup_2" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete -f res/go-demo-2-insuf-node.yml
+</pre></div>
+</td></tr></table>
+
 <h2 id="securing-kubernetes">Securing Kubernetes<a class="headerlink" href="#securing-kubernetes" title="Permanent link">&para;</a></h2>
 <h3 id="gke">GKE<a class="headerlink" href="#gke" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1811,7 +1954,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/heapster/master/de
 <p>Heapster is now EOL, but still serves a purpose for this demo.
 Please do NOT use this in production systems.</p>
 </div>
-<h3 id="view-resources">View resources<a class="headerlink" href="#view-resources" title="Permanent link">&para;</a></h3>
+<h3 id="view-resources_1">View resources<a class="headerlink" href="#view-resources_1" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cat res/go-demo-2-random.yml
 </pre></div>
 </td></tr></table>
@@ -2203,7 +2346,7 @@ curl <span class="s2">&quot;</span><span class="nv">$BASE_URL</span><span class=
 </pre></div>
 </td></tr></table>
 
-<h3 id="cleanup_2">Cleanup<a class="headerlink" href="#cleanup_2" title="Permanent link">&para;</a></h3>
+<h3 id="cleanup_3">Cleanup<a class="headerlink" href="#cleanup_3" title="Permanent link">&para;</a></h3>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl delete ns dev
 </pre></div>
 </td></tr></table>

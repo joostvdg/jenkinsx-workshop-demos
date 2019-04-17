@@ -1447,8 +1447,12 @@ open <span class="s2">&quot;http://</span><span class="nv">$JENKINS_ADDR</span><
 
 <h3 id="create-volume">Create Volume<a class="headerlink" href="#create-volume" title="Permanent link">&para;</a></h3>
 <h4 id="gke">GKE<a class="headerlink" href="#gke" title="Permanent link">&para;</a></h4>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">CLUSTER_NAME</span><span class="o">=</span>
+</pre></div>
+</td></tr></table>
+
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gcloud compute instances list --filter<span class="o">=</span><span class="s2">&quot;name:(&#39;gke-devops23*&#39;)&quot;</span> <span class="se">\</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gcloud compute instances list --filter<span class="o">=</span><span class="s2">&quot;name:(&#39;</span><span class="si">${</span><span class="nv">CLUSTER_NAME</span><span class="si">}</span><span class="s2">&#39;)&quot;</span> <span class="se">\</span>
     --format <span class="s1">&#39;csv[no-heading](zone)&#39;</span> <span class="p">|</span> tee zones
 </pre></div>
 </td></tr></table>
@@ -1465,15 +1469,20 @@ open <span class="s2">&quot;http://</span><span class="nv">$JENKINS_ADDR</span><
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gcloud compute disks create disk1 --zone <span class="nv">$AZ_1</span>
+<p>Replace <code>???</code> with your name to make sure the disk name is unique.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">PREFIX</span><span class="o">=</span>???
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gcloud compute disks create disk2 --zone <span class="nv">$AZ_2</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gcloud compute disks create <span class="si">${</span><span class="nv">PREFIX</span><span class="si">}</span>-disk1 --zone <span class="nv">$AZ_1</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gcloud compute disks create disk3 --zone <span class="nv">$AZ_3</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gcloud compute disks create <span class="si">${</span><span class="nv">PREFIX</span><span class="si">}</span>-disk2 --zone <span class="nv">$AZ_2</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>gcloud compute disks create <span class="si">${</span><span class="nv">PREFIX</span><span class="si">}</span>-disk3 --zone <span class="nv">$AZ_3</span>
 </pre></div>
 </td></tr></table>
 
@@ -1484,9 +1493,9 @@ So stay in the same console session or make sure you recreate these!</p>
 </div>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">VOLUME_ID_1</span><span class="o">=</span>disk1
-<span class="nv">VOLUME_ID_2</span><span class="o">=</span>disk2
-<span class="nv">VOLUME_ID_3</span><span class="o">=</span>disk3
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nv">VOLUME_ID_1</span><span class="o">=</span><span class="si">${</span><span class="nv">PREFIX</span><span class="si">}</span>-disk1
+<span class="nv">VOLUME_ID_2</span><span class="o">=</span><span class="si">${</span><span class="nv">PREFIX</span><span class="si">}</span>-disk2
+<span class="nv">VOLUME_ID_3</span><span class="o">=</span><span class="si">${</span><span class="nv">PREFIX</span><span class="si">}</span>-disk3
 </pre></div>
 </td></tr></table>
 
