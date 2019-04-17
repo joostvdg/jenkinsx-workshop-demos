@@ -98,7 +98,11 @@ open "http://$JENKINS_ADDR/jenkins"
 #### GKE
 
 ```bash
-gcloud compute instances list --filter="name:('gke-devops23*')" \
+CLUSTER_NAME=
+```
+
+```bash
+gcloud compute instances list --filter="name:('${CLUSTER_NAME}')" \
     --format 'csv[no-heading](zone)' | tee zones
 ```
 
@@ -114,16 +118,22 @@ AZ_2=$(cat zones | tail -n 2 | head -n 1)
 AZ_3=$(cat zones | tail -n 1)
 ```
 
+Replace `???` with your name to make sure the disk name is unique.
+
 ```bash
-gcloud compute disks create disk1 --zone $AZ_1
+PREFIX=???
 ```
 
 ```bash
-gcloud compute disks create disk2 --zone $AZ_2
+gcloud compute disks create ${PREFIX}-disk1 --zone $AZ_1
 ```
 
 ```bash
-gcloud compute disks create disk3 --zone $AZ_3
+gcloud compute disks create ${PREFIX}-disk2 --zone $AZ_2
+```
+
+```bash
+gcloud compute disks create ${PREFIX}-disk3 --zone $AZ_3
 ```
 
 !!! Warning
@@ -131,9 +141,9 @@ gcloud compute disks create disk3 --zone $AZ_3
     So stay in the same console session or make sure you recreate these!
 
 ```bash
-VOLUME_ID_1=disk1
-VOLUME_ID_2=disk2
-VOLUME_ID_3=disk3
+VOLUME_ID_1=${PREFIX}-disk1
+VOLUME_ID_2=${PREFIX}-disk2
+VOLUME_ID_3=${PREFIX}-disk3
 ```
 
 ```bash

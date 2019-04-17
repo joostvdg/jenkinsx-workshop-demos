@@ -362,6 +362,72 @@ kubectl delete -f ns/go-demo-2.yml
 kubectl delete pod test
 ```
 
+## Resource limits & requests - SHORT
+
+### View resources
+
+```bash
+cat res/go-demo-2-random.yml
+```
+
+```bash
+kubectl create -f res/go-demo-2-random.yml --record --save-config
+```
+
+```bash
+kubectl rollout status deployment go-demo-2-api
+```
+
+```bash
+kubectl describe deploy go-demo-2-api
+```
+
+```bash
+kubectl describe nodes
+```
+
+### Too little memory
+
+```bash
+cat res/go-demo-2-insuf-mem.yml
+```
+
+```bash
+kubectl apply -f res/go-demo-2-insuf-mem.yml --record
+```
+
+```bash
+kubectl get pods
+```
+
+```bash
+kubectl describe pod go-demo-2-db
+```
+
+### Too much memory
+
+```bash
+cat res/go-demo-2-insuf-node.yml
+```
+
+```bash
+kubectl apply -f res/go-demo-2-insuf-node.yml --record
+```
+
+```bash
+kubectl get pods
+```
+
+```bash
+kubectl describe pod go-demo-2-db
+```
+
+### Cleanup
+
+```bash
+kubectl delete -f res/go-demo-2-insuf-node.yml
+```
+
 ## Securing Kubernetes
 
 ### GKE
@@ -776,4 +842,3 @@ kubectl expose deployment go-demo-2-api -n dev \
 ```bash
 kubectl delete ns dev
 ```
-
