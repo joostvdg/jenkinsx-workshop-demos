@@ -1574,7 +1574,22 @@ cat <span class="nv">$YAML</span>
 </pre></div>
 </td></tr></table>
 
+<p>Let's delete Jenkins' deployment.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n jenkins delete deploy jenkins
+</pre></div>
+</td></tr></table>
+
+<p>Confirm it is gone.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl get all -n jenkins
+</pre></div>
+</td></tr></table>
+
+<p>Now, let's recreate Jenkins.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl apply -f pv/jenkins-pv.yml --record
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>kubectl -n jenkins rollout status deployment jenkins
 </pre></div>
 </td></tr></table>
 

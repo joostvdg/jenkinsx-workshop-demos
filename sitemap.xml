@@ -2,132 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/install/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/go-demo/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/buildpack/import/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/buildpack/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/xfiles/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/xfiles/mulder/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/xfiles/scully/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/xfiles/integration/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/tips/commands/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/tips/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/tips/gitops/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/tips/vault/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/serverless/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/other/custom-domain/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/other/cluster-validation/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/other/security/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/other/issue-trackers/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/other/alt-git-repo/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/part2/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/part3/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/tools/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/helm/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/create-cluster/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/knative-build/</loc>
-     <lastmod>2019-04-16</lastmod>
+     <lastmod>2019-04-17</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
