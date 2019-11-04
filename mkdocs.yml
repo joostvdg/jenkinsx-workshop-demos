@@ -33,6 +33,11 @@ nav:
 - JX Serverless:
   - Intro: serverless/index.md
 
+- Devoxx:
+  - Init: devoxx/create-cluster.md
+  - Quickstart: devoxx/quickstart.md
+  - Environment: devoxx/environment.md
+
 - Other JX Topics:
   - Custom Domain: other/custom-domain.md
   - Cluster Validation: other/cluster-validation.md
