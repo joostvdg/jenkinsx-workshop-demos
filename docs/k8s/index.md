@@ -36,28 +36,26 @@ cd k8s-specs
 cat pod/db.yml
 ```
 
-### Create & Update
+### Create
 
 ```bash
 kubectl create -f pod/db.yml
-```
-
-```bash
-kubectl create -f pod/db.yml
-```
-
-```bash
-kubectl apply -f pod/db.yml
 ```
 
 ### View Pod
 
-```bash tab="Singular"
-kubectl get pod
+```bash
+kubectl get pods
 ```
+
+### View Pod Alternatives
 
 ```bash tab="Plural"
 kubectl get pods
+```
+
+```bash tab="Singular"
+kubectl get pod
 ```
 
 ```bash tab="Shorthand"
@@ -72,12 +70,35 @@ kubectl get po db -o yaml
 kubectl get po db -o json
 ```
 
-```bash tab="JSON Path
+```bash tab="JSON Path"
 kubectl get pod db -o jsonpath="{.metadata.name}"
 ```
 
-```bash tab="Describe"
+### Describe Pod
+
+```bash
 kubectl describe pod db
+```
+
+### Update Pod
+
+```bash
+kubectl create -f pod/db.yml
+```
+
+This should yield an error!
+
+```bash
+Error from server (AlreadyExists): error when creating "pod/db.yml": pods "db" already exists
+```
+
+The create command is imperative and in this case not idempotent.
+
+To update we would either have to _patch_ the resource in the cluster,
+or **apply** an updated version of the _yaml_ file.
+
+```bash
+kubectl apply -f pod/db.yml
 ```
 
 ### Enter the Pod
@@ -89,6 +110,9 @@ kubectl exec db ps aux
 ```bash
 kubectl exec -it db sh
 ```
+
+The command below should be executed from inside the pod.
+If you get something like `command not found: mongo`, double check the above command's success.
 
 ```bash
 echo 'db.stats()' | mongo localhost:27017/test
@@ -107,7 +131,7 @@ kubectl exec -it db pkill mongod
 ```
 
 ```bash
-kubectl get pods
+kubectl get pods -w
 ```
 
 ### Cleanup
@@ -140,6 +164,18 @@ kubectl get rs
 kubectl describe -f rs/go-demo-2.yml
 ```
 
+Which should look something like this, notice the highlighted lines?
+
+```bash hl_lines="3 4"
+Events:
+  Type    Reason            Age   From                   Message
+  ----    ------            ----  ----                   -------
+  Normal  SuccessfulCreate  9s    replicaset-controller  Created pod: go-demo-2-4mw79
+  Normal  SuccessfulCreate  9s    replicaset-controller  Created pod: go-demo-2-bcv5n
+```
+
+### View Pods
+
 ### Delete Pod
 
 ```bash
@@ -163,22 +199,42 @@ kubectl delete -f rs/go-demo-2.yml
 
 ## Labels
 
-### Create a Pod
+### Create a Pods
 
 ```bash
+kubectl create -f rs/go-demo-2.yml
 kubectl create -f pod/db.yml
+```
+
+### Get Pods
+
+```bash
+kubectl get pods
 ```
 
 ### Get it by Label
 
 ```bash
-kubectl get po -l type=db
+kubectl get pods -l type=backend
 ```
 
-### Get multiple
+### Get it by multiple labels
 
 ```bash
-kubectl get po -n kube-system -l component=kube-proxy,tier=node
+kubectl get pods -l type=backend,language=go
+```
+
+### Show Labels
+
+```bash
+kubectl get pods --show-labels
+```
+
+### Cleanup
+
+```bash
+kubectl delete -f rs/go-demo-2.yml
+kubectl delete -f pod/db.yml
 ```
 
 ## Service
@@ -212,16 +268,19 @@ kubectl get -f svc/go-demo-2.yml
 ### Get LB IP
 
 ```bash tab="EKS"
+#!/bin/bash
 IP=$(kubectl get svc go-demo-2-api \
     -o jsonpath="{.status.loadBalancer.ingress[0].hostname}")
 ```
 
 ```bash tab="GKE"
+#!/bin/bash
 IP=$(kubectl get svc go-demo-2-api \
     -o jsonpath="{.status.loadBalancer.ingress[0].ip}")
 ```
 
 ```bash tab="Minikube"
+#!/bin/bash
 IP=$(minikube ip)
 ```
 

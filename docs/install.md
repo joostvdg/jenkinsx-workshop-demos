@@ -247,7 +247,7 @@ nexus:
     `EKS` option will download and use the [eksctl](https://eksctl.io/) tool to create a new EKS cluster, then it’ll install Jenkins X on top.
 
 !!! Info
-    When you're creating your first cluster with GKE, you will need to login for authorization. If you have authorization taken care of, you can add `--no-login` to prevent the process.
+    When you're creating your first cluster with GKE, you will need to login for authorization. If you have authorization taken care of, you can add `--skip-login` to prevent the process.
 
 ```bash tab="GKE"
 jx create cluster gke -n $CLUSTER_NAME -p $PROJECT -z ${ZONE} \

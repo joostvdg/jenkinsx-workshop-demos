@@ -145,6 +145,7 @@ Which means, this part:
 Should look like:
 
 ```yaml tab="Expected End Result"
+
 - alias: preview-redis
   name: REPLACE_ME_APP_NAME-redis
   repository: https://kubernetes-charts.storage.googleapis.com

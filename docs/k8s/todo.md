@@ -1,5 +1,10 @@
 # Kubernetes basics
 
+## Others
+
+ > The dev environment is set Never to receive promotions. New releases of our applications will not run there. The staging environment, on the other hand, is set to Auto promotion. What that means is that if a pipeline (defined in Jenkinsfile) has a command jx promote --all-auto, a new release will be deployed to all the environments with promotion set to Auto.
+
+
 ## Slide notes
 
 A few points I forgot, and that we should talk about:
@@ -23,17 +28,7 @@ A few points I forgot, and that we should talk about:
 * crash course
     * image vs container vs instance
     * layers, from scratch
-* pets vs. cattle
 * regional vs. zonal
-* slides of kubernetes asynch + event handlers + reconcilliation
-* kubernetes imperative vs. declarative
-* 12-factor app / container
-* even if you don't need scaling:
-    * explicit resource reqs
-    * auto-restarts
-    * homogenous deployment
-    * homogenous observability
-    * homogenous extension (think istio, flagger)
 * rollback vs. rollforward
 * namespaces
     * purpose
@@ -48,13 +43,11 @@ A few points I forgot, and that we should talk about:
     * PersistendVolumeClaimTemplates
     * Provisioners, such as NFS (incl. EFS and filestor support)
     * storage Classes
-* Infrastructure As Code
 * Declarative instead of Imperative
 * Self-healing
 * High-Availability (HA)
 * Dynamic sizing
 * Dynamic scaling
-* Immutable
 * Separate state from process
     * 12-factor app/container
 * Automatable
