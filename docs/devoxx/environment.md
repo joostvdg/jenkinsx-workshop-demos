@@ -17,7 +17,18 @@ git checkout -b helloworld-controller
 ### Add Model
 
 ```java
-GreetGrasd
+public class Greeting {
+
+    private String greeting;
+
+    public Greeting(String greeting) {
+        this.greeting = greeting;
+    }
+
+    public String getGreeting() {
+        return greeting;
+    }
+}
 ```
 
 ### Add controller
@@ -85,6 +96,7 @@ jx get activity -f env-cjxd-prod -w
 ```
 jx ui -p 8082
 ```
+
 
 ```
 jx get applications -e production
