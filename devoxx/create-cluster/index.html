@@ -38,7 +38,7 @@
     
     
       
-        <title>Create Cluster - Jay's Jenkins X Workshop</title>
+        <title>Init - Jay's Jenkins X Workshop</title>
       
     
     
@@ -113,7 +113,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Create Cluster
+                Init
               
             </span>
           
@@ -486,16 +486,475 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
-      Other JX Topics
+      Devoxx
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
+        Devoxx
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Init
+      </label>
+    
+    <a href="./" title="Init" class="md-nav__link md-nav__link--active">
+      Init
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#terraform" class="md-nav__link">
+    Terraform
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-kubeconfig" class="md-nav__link">
+    Get Kubeconfig
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jx-boot" class="md-nav__link">
+    JX Boot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jx-boot-cjxd" class="md-nav__link">
+    JX Boot - CJXD
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clone-faillure" class="md-nav__link">
+    Clone Faillure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#helm-apply-issue" class="md-nav__link">
+    Helm Apply Issue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-clouddns" class="md-nav__link">
+    TLS - CloudDNS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-support-for-multiple-subdomains" class="md-nav__link">
+    Add Support For Multiple Subdomains
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#imagepullbackup" class="md-nav__link">
+    ImagePullBackup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-cjxd-ui" class="md-nav__link">
+    Add CJXD UI
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unable-to-enable-dns-api" class="md-nav__link">
+    Unable To Enable DNS API
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset-installation" class="md-nav__link">
+    Reset Installation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remove-environment-repos" class="md-nav__link">
+    Remove Environment Repos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-gcp-resources" class="md-nav__link">
+    Clean GCP Resources
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disks" class="md-nav__link">
+    Disks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buckets" class="md-nav__link">
+    Buckets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    Others?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clean-environment-information" class="md-nav__link">
+    Clean Environment Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear-local-data" class="md-nav__link">
+    Clear Local Data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recreate-git-token" class="md-nav__link">
+    Recreate Git Token
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    Debug
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tls-configuration" class="md-nav__link">
+    TLS Configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cert-manager" class="md-nav__link">
+    Cert Manager
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-dns-controller" class="md-nav__link">
+    External DNS Controller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certificate-resources" class="md-nav__link">
+    Certificate Resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-new-environment" class="md-nav__link">
+    Create new Environment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-cloudbees-environment" class="md-nav__link">
+    Create CloudBees Environment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-resources" class="md-nav__link">
+    Get Resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-tls" class="md-nav__link">
+    Configure TLS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-cloud-dns-zone" class="md-nav__link">
+    Create Cloud DNS Zone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-certificate-issuer" class="md-nav__link">
+    Configure Certificate &amp; Issuer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-dns-secrets" class="md-nav__link">
+    Configure DNS Secrets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirm-certificate-works" class="md-nav__link">
+    Confirm Certificate Works
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-cloudbees-core" class="md-nav__link">
+    Add CloudBees Core
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cb-env" class="md-nav__link">
+    cb env
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cb-source-repository" class="md-nav__link">
+    cb source repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jx-requirements" class="md-nav__link">
+    jx-requirements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-unique-dns" class="md-nav__link">
+    TLS Unique DNS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jx-requirements_1" class="md-nav__link">
+    jx-requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exdns-deployment-config" class="md-nav__link">
+    exdns deployment config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certmanager-complaining-about-the-wrong-domain" class="md-nav__link">
+    Certmanager complaining about the wrong domain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../quickstart/" title="Quickstart" class="md-nav__link">
+      Quickstart
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../environment/" title="Environment" class="md-nav__link">
+      Environment
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Other JX Topics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
         Other JX Topics
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -573,13 +1032,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
-    <label class="md-nav__link" for="nav-9">
+    <label class="md-nav__link" for="nav-10">
       Kubernetes
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
+      <label class="md-nav__title" for="nav-10">
         Kubernetes
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -669,13 +1128,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
-    <label class="md-nav__link" for="nav-10">
+    <label class="md-nav__link" for="nav-11">
       Kubernetes Advanced
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
+      <label class="md-nav__title" for="nav-11">
         Kubernetes Advanced
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1780,6 +2239,41 @@ E1104 09:13:34.141122       1 base_controller.go:189] cert-manager/controller/ch
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../serverless/" title="Intro" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Intro
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../quickstart/" title="Quickstart" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Quickstart
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

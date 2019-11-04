@@ -71,6 +71,21 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/devoxx/create-cluster/</loc>
+     <lastmod>2019-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/devoxx/quickstart/</loc>
+     <lastmod>2019-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/devoxx/environment/</loc>
+     <lastmod>2019-11-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/other/custom-domain/</loc>
      <lastmod>2019-11-04</lastmod>
      <changefreq>daily</changefreq>
