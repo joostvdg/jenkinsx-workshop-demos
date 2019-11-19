@@ -38,6 +38,11 @@ nav:
   - Quickstart: devoxx/quickstart.md
   - Environment: devoxx/environment.md
 
+- Preview Env:
+  - Introduction: preview/index.md
+  - Dependencies: preview/dependencies.md
+  - Database: preview/database.md
+
 - Other JX Topics:
   - Custom Domain: other/custom-domain.md
   - Cluster Validation: other/cluster-validation.md
