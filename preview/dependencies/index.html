@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/knative-build/">
+        <link rel="canonical" href="https://joostvdg.github.io/jenkinsx-workshop-demos/preview/dependencies/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Knative Build - Jay's Jenkins X Workshop</title>
+        <title>Dependencies - Jay's Jenkins X Workshop</title>
       
     
     
@@ -87,6 +87,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#preview-env-dependencies" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -109,7 +113,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Knative Build
+                Dependencies
               
             </span>
           
@@ -542,10 +546,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
     
     <label class="md-nav__link" for="nav-9">
       Preview Env
@@ -563,7 +569,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../preview/" title="Introduction" class="md-nav__link">
+    <a href="../" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -573,11 +579,97 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../preview/dependencies/" title="Dependencies" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Dependencies
+      </label>
+    
+    <a href="./" title="Dependencies" class="md-nav__link md-nav__link--active">
       Dependencies
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#remarks" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-service-link" class="md-nav__link">
+    Direct Service Link
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-instance" class="md-nav__link">
+    Dependency Instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    MongoDB
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-directly" class="md-nav__link">
+    Install Directly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-jenkins-x" class="md-nav__link">
+    Via Jenkins X
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -587,7 +679,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../preview/database/" title="Database" class="md-nav__link">
+    <a href="../database/" title="Database" class="md-nav__link">
       Database
     </a>
   </li>
@@ -707,7 +799,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Basics I" class="md-nav__link">
+    <a href="../../k8s/" title="Basics I" class="md-nav__link">
       Basics I
     </a>
   </li>
@@ -719,7 +811,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part2/" title="Basics II" class="md-nav__link">
+    <a href="../../k8s/part2/" title="Basics II" class="md-nav__link">
       Basics II
     </a>
   </li>
@@ -731,7 +823,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part3/" title="Basics III" class="md-nav__link">
+    <a href="../../k8s/part3/" title="Basics III" class="md-nav__link">
       Basics III
     </a>
   </li>
@@ -743,7 +835,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/" title="Tools" class="md-nav__link">
+    <a href="../../k8s/tools/" title="Tools" class="md-nav__link">
       Tools
     </a>
   </li>
@@ -755,7 +847,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../helm/" title="Helm" class="md-nav__link">
+    <a href="../../k8s/helm/" title="Helm" class="md-nav__link">
       Helm
     </a>
   </li>
@@ -767,7 +859,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../create-cluster/" title="Create Cluster" class="md-nav__link">
+    <a href="../../k8s/create-cluster/" title="Create Cluster" class="md-nav__link">
       Create Cluster
     </a>
   </li>
@@ -782,12 +874,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
     <label class="md-nav__link" for="nav-12">
       Kubernetes Advanced
@@ -803,18 +893,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Knative Build" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../k8s/knative-build/" title="Knative Build" class="md-nav__link">
       Knative Build
     </a>
-    
   </li>
 
         
@@ -830,17 +913,168 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#remarks" class="md-nav__link">
+    Remarks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#direct-service-link" class="md-nav__link">
+    Direct Service Link
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-instance" class="md-nav__link">
+    Dependency Instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mongodb" class="md-nav__link">
+    MongoDB
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-directly" class="md-nav__link">
+    Install Directly
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-jenkins-x" class="md-nav__link">
+    Via Jenkins X
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/edit/master/docs/k8s/knative-build.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/edit/master/docs/preview/dependencies.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Knative Build</h1>
-                
-                
+                <h1 id="preview-env-dependencies">Preview Env Dependencies<a class="headerlink" href="#preview-env-dependencies" title="Permanent link">&para;</a></h1>
+<h2 id="remarks">Remarks<a class="headerlink" href="#remarks" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>agreed. one cheat to minimise having the front end preview to know the latest backend version and vice versa is for the previews of the front + back ends to use latest image verisons; we generally recommend always using real versions - but for these kinds of front+back end previews it can be handy (then never using latest in real releases post a merge)</p>
+</blockquote>
+<h2 id="direct-service-link">Direct Service Link<a class="headerlink" href="#direct-service-link" title="Permanent link">&para;</a></h2>
+<p>Add a Kubernetes <code>Service</code> resource in <code>charts/preview/templates/</code>.
+The application launched in the preview environment can then call the dependency "locally", where the service has a reference to an instance running elsewhere.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<details class="example"><summary>Example</summary><table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Service</span>
+<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">metadata</span><span class="p">:</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mysql</span>
+<span class="nt">spec</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ExternalName</span>
+    <span class="c1"># Target service DNS name</span>
+    <span class="nt">externalName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mysql.jx-staging.svc.cluster.local</span>
+    <span class="nt">ports</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3306</span>
+</pre></div>
+</td></tr></table>
+
+</details>
+<h2 id="dependency-instance">Dependency Instance<a class="headerlink" href="#dependency-instance" title="Permanent link">&para;</a></h2>
+<p>You can add dependencies in the <code>charts/preview/requirements.yaml</code> as for any other chart.</p>
+<p>Due to how Jenkins X creates dependencies, you will have to change something somewhere.
+Either your <code>values.yaml</code> needs to change how the direct dependency is called - to avoid the preview prefix - or you have to change your application's configuration to be able to point to the de Preview instance of your dependency.</p>
+<h2 id="mongodb">MongoDB<a class="headerlink" href="#mongodb" title="Permanent link">&para;</a></h2>
+<h3 id="install-directly">Install Directly<a class="headerlink" href="#install-directly" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>helm repo add bitnami https://charts.bitnami.com
+helm install bitnami/mongodb --version 7.4.5
+</pre></div>
+</td></tr></table>
+
+<h3 id="via-jenkins-x">Via Jenkins X<a class="headerlink" href="#via-jenkins-x" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># requirements.yaml</span>
+<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mongodb</span>
+  <span class="nt">repository</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://charts.bitnami.com</span>
+  <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">7.4.5</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># values.yaml</span>
+<span class="nt">mongodb</span><span class="p">:</span>
+  <span class="nt">mongodbUsername</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">someusername</span>
+  <span class="nt">mongodbPassword</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">somepassword</span>
+  <span class="nt">mongodbDatabase</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">somedatabase</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://medium.com/@MichalFoksa/jenkins-x-preview-environment-3bf2424a05e4">Jenkins X Preview Environment - Michal Foksa</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
                   
                 
@@ -861,7 +1095,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../create-cluster/" title="Create Cluster" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -870,11 +1104,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Create Cluster
+                Introduction
               </span>
             </div>
           </a>
         
+        
+          <a href="../database/" title="Database" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Database
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>

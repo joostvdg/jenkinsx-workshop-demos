@@ -11,7 +11,7 @@
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
       
-        <link rel="canonical" href="https://joostvdg.github.io/jenkinsx-workshop-demos/k8s/knative-build/">
+        <link rel="canonical" href="https://joostvdg.github.io/jenkinsx-workshop-demos/preview/pipeline/">
       
       
       
@@ -38,7 +38,7 @@
     
     
       
-        <title>Knative Build - Jay's Jenkins X Workshop</title>
+        <title>Jenkins X Pipeline - Jay's Jenkins X Workshop</title>
       
     
     
@@ -87,6 +87,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#jenkins-x-pipeline" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -109,7 +113,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Knative Build
+                Jenkins X Pipeline
               
             </span>
           
@@ -563,7 +567,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../preview/" title="Introduction" class="md-nav__link">
+    <a href="../" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -575,7 +579,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../preview/dependencies/" title="Dependencies" class="md-nav__link">
+    <a href="../dependencies/" title="Dependencies" class="md-nav__link">
       Dependencies
     </a>
   </li>
@@ -587,7 +591,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../preview/database/" title="Database" class="md-nav__link">
+    <a href="../database/" title="Database" class="md-nav__link">
       Database
     </a>
   </li>
@@ -707,7 +711,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Basics I" class="md-nav__link">
+    <a href="../../k8s/" title="Basics I" class="md-nav__link">
       Basics I
     </a>
   </li>
@@ -719,7 +723,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part2/" title="Basics II" class="md-nav__link">
+    <a href="../../k8s/part2/" title="Basics II" class="md-nav__link">
       Basics II
     </a>
   </li>
@@ -731,7 +735,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../part3/" title="Basics III" class="md-nav__link">
+    <a href="../../k8s/part3/" title="Basics III" class="md-nav__link">
       Basics III
     </a>
   </li>
@@ -743,7 +747,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/" title="Tools" class="md-nav__link">
+    <a href="../../k8s/tools/" title="Tools" class="md-nav__link">
       Tools
     </a>
   </li>
@@ -755,7 +759,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../helm/" title="Helm" class="md-nav__link">
+    <a href="../../k8s/helm/" title="Helm" class="md-nav__link">
       Helm
     </a>
   </li>
@@ -767,7 +771,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../create-cluster/" title="Create Cluster" class="md-nav__link">
+    <a href="../../k8s/create-cluster/" title="Create Cluster" class="md-nav__link">
       Create Cluster
     </a>
   </li>
@@ -782,12 +786,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
     
     <label class="md-nav__link" for="nav-12">
       Kubernetes Advanced
@@ -803,18 +805,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Knative Build" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../k8s/knative-build/" title="Knative Build" class="md-nav__link">
       Knative Build
     </a>
-    
   </li>
 
         
@@ -830,17 +825,274 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-step" class="md-nav__link">
+    Create Step
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-step-for-prs" class="md-nav__link">
+    Create Step For PRs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simple-example" class="md-nav__link">
+    Simple Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiline-wait" class="md-nav__link">
+    Multiline &amp; Wait
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validate-current-pipeline-configuration" class="md-nav__link">
+    Validate Current Pipeline Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-sonarqube-scan" class="md-nav__link">
+    Add SonarQube Scan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-schema" class="md-nav__link">
+    Pipeline Schema
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-pack-schema" class="md-nav__link">
+    Build Pack Schema
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/edit/master/docs/k8s/knative-build.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/joostvdg/jenkinsx-workshop-demos/edit/master/docs/preview/pipeline.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Knative Build</h1>
-                
-                
+                <h1 id="jenkins-x-pipeline">Jenkins X Pipeline<a class="headerlink" href="#jenkins-x-pipeline" title="Permanent link">&para;</a></h1>
+<h2 id="create-step">Create Step<a class="headerlink" href="#create-step" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx create step --help
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Creates a step in the Jenkins X Pipeline
+
+Aliases:
+step, steps
+Examples:
+  <span class="c1"># Create a new step in the Jenkins X Pipeline interactively</span>
+  jx create step
+
+  <span class="c1"># Creates a step on the command line: adding a post step to the release build lifecycle</span>
+  jx create step -sh <span class="s2">&quot;echo hello world&quot;</span>
+
+  <span class="c1"># Creates a step on the command line: adding a pre step to the pullRequest promote lifecycle</span>
+  jx create step -p pullrequest -l promote -m pre -c <span class="s2">&quot;echo before promote&quot;</span>
+Options:
+  -d, --dir<span class="o">=</span><span class="s1">&#39;&#39;</span>: The root project directory. Defaults to the current dir
+  -l, --lifecycle<span class="o">=</span><span class="s1">&#39;&#39;</span>: The lifecycle stage to add your step. Possible values: setup, setversion, prebuild, build, postbuild, promote
+  -m, --mode<span class="o">=</span><span class="s1">&#39;&#39;</span>: The create mode <span class="k">for</span> the new step. Possible values: pre, post, replace
+  -p, --pipeline<span class="o">=</span><span class="s1">&#39;&#39;</span>: The pipeline kind to add your step. Possible values: release, pullrequest, feature
+  -c, --sh<span class="o">=</span><span class="s1">&#39;&#39;</span>: The <span class="nb">command</span> to invoke <span class="k">for</span> the new step
+Usage:
+  jx create step <span class="o">[</span>flags<span class="o">]</span> <span class="o">[</span>options<span class="o">]</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="create-step-for-prs">Create Step For PRs<a class="headerlink" href="#create-step-for-prs" title="Permanent link">&para;</a></h2>
+<h3 id="simple-example">Simple Example<a class="headerlink" href="#simple-example" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx create step <span class="se">\</span>
+    --pipeline pullrequest <span class="se">\</span>
+    --lifecycle promote <span class="se">\</span>
+    --mode post <span class="se">\</span>
+    --sh <span class="s1">&#39;ls -lath&#39;</span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="multiline-wait">Multiline &amp; Wait<a class="headerlink" href="#multiline-wait" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">pipelineConfig</span><span class="p">:</span>
+  <span class="nt">pipelines</span><span class="p">:</span>
+    <span class="nt">pullRequest</span><span class="p">:</span>
+      <span class="nt">build</span><span class="p">:</span>
+        <span class="nt">preSteps</span><span class="p">:</span>
+        <span class="c1"># This was modified</span>
+        <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">unit-tests</span>
+          <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">make unittest</span>
+      <span class="nt">promote</span><span class="p">:</span>
+        <span class="nt">steps</span><span class="p">:</span>
+        <span class="c1"># This is new</span>
+        <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rollout</span>
+          <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+            <span class="no">NS=\`echo cd-\$REPO_OWNER-go-demo-6-\$BRANCH_NAME | tr &#39;[:upper:]&#39; &#39;[:lower:]&#39;\`</span>
+            <span class="no">sleep 15</span>
+            <span class="no">kubectl -n \$NS rollout status deployment preview-preview --timeout 3m</span>
+        <span class="c1"># This was modified</span>
+        <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">functional-tests</span>
+          <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ADDRESS=\`jx get preview --current 2&gt;&amp;1\` make functest</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="validate-current-pipeline-configuration">Validate Current Pipeline Configuration<a class="headerlink" href="#validate-current-pipeline-configuration" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx step syntax validate pipeline
+</pre></div>
+</td></tr></table>
+
+<h2 id="add-sonarqube-scan">Add SonarQube Scan<a class="headerlink" href="#add-sonarqube-scan" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">pipelineConfig</span><span class="p">:</span>
+  <span class="nt">pipelines</span><span class="p">:</span>
+    <span class="nt">overrides</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mvn-deploy</span>
+        <span class="nt">pipeline</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">release</span>
+        <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">build</span>
+        <span class="nt">step</span><span class="p">:</span>
+          <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sonar</span>
+          <span class="nt">command</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sonar-scanner</span>
+          <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">fabiopotame/sonar-scanner-cli</span> <span class="c1"># newtmitch/sonar-scanner for JDK 10+?</span>
+          <span class="nt">dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/workspace/source/</span>
+          <span class="nt">args</span><span class="p">:</span>
+           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-Dsonar.projectName=jx-qs-spring-boot</span>
+           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-Dsonar.projectKey=jx-qs-spring-boot</span>
+           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-Dsonar.organization=joostvdg-github</span>
+           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-Dsonar.sources=./src/main/java/</span>
+           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-Dsonar.language=java</span>
+           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-Dsonar.java.binaries=./target/classes</span>
+           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-Dsonar.host.url=https://sonarcloud.io</span>
+           <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-Dsonar.login=bebe633ad6599cbf52f7e0b9ee1bc2bbd3cd9c80</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">after</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="pipeline-schema">Pipeline Schema<a class="headerlink" href="#pipeline-schema" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx step syntax schema
+</pre></div>
+</td></tr></table>
+
+<h3 id="build-pack-schema">Build Pack Schema<a class="headerlink" href="#build-pack-schema" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx step syntax schema --buildpack
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jx step syntax validate buildpacks
+</pre></div>
+</td></tr></table>
                 
                   
                 
@@ -857,27 +1109,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../create-cluster/" title="Create Cluster" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Create Cluster
-              </span>
-            </div>
-          </a>
-        
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
