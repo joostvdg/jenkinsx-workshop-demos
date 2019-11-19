@@ -41,6 +41,7 @@ nav:
 - Preview Env:
   - Introduction: preview/index.md
   - Dependencies: preview/dependencies.md
+  - Pipeline: preview/pipeline.md
   - Database: preview/database.md
 
 - Other JX Topics:
