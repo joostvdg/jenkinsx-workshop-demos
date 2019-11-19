@@ -96,6 +96,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/preview/pipeline/</loc>
+     <lastmod>2019-11-19</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://joostvdg.github.io/jenkinsx-workshop-demos/preview/database/</loc>
      <lastmod>2019-11-19</lastmod>
      <changefreq>daily</changefreq>
